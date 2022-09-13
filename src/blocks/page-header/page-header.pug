@@ -1,0 +1,91 @@
+//- Все примеси в этом файле должны начинаться c имени блока (page-header)
+
+mixin page-header(mods)
+
+  //- Принимает:
+  //-   mods  {string} - список модификаторов
+  //- Вызов:
+    +page-header()
+      p «Шапка»
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' page-header--' + modsList[i].trim();
+      }
+    }
+
+  header.page-header(class=allMods, role='banner')&attributes(attributes)
+    .page-header__inner.container
+      .page-header__top 
+        .page-header__left 
+          a.page-header__logo(href="/") 
+            img(src='img/logo.svg' alt='Логотип' width="320" height="50")
+        .page-header__menu.menu 
+          .menu__burger 
+            .menu__icon
+              span 
+            .menu__text Меню
+          nav.menu__body 
+            .menu__top 
+              .menu__top-left 
+                .menu__text Меню
+              .menu__top-middle 
+                a(href="javascript:void(0)").page-header__lang-btn ENG
+              .menu__top-close
+                button.menu__mob-close 
+                  svg(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    rect(x='0.454102' y='17.4246' width='24' height='3' rx='1.5' transform='rotate(-45 0.454102 17.4246)' fill='black')
+                    rect(width='24' height='3' rx='1.5' transform='matrix(-0.707107 -0.707107 -0.707107 0.707107 19.5459 17.4246)' fill='black')
+            ul.menu__list 
+              li.menu__item.has-child
+                a(href="javascript:void(0)").menu__link.h4 Кто мы
+                ul.menu__sublist 
+                  li.menu__subitem 
+                    a(href="javascript:void(0)").menu__sublink.h5 Новости и публикации
+                  li.menu__subitem 
+                    a(href="javascript:void(0)").menu__sublink.h5 Корпоративная ответственность
+                  li.menu__subitem 
+                    a(href="javascript:void(0)").menu__sublink.h5 Проекты
+              li.menu__item.has-child
+                a(href="javascript:void(0)").menu__link.h4 Решения
+                ul.menu__sublist 
+                  li.menu__subitem 
+                    a(href="javascript:void(0)").menu__sublink.h5 Энергоучёт и энергоэффективность
+                  li.menu__subitem 
+                    a(href="javascript:void(0)").menu__sublink.h5 Сбор данных по потреблению энергоресурсов
+                  li.menu__subitem 
+                    a(href="javascript:void(0)").menu__sublink.h5 Коммерческий учёт
+                  li.menu__subitem 
+                    a(href="javascript:void(0)").menu__sublink.h5 Диспетчеризация и технический учёт
+                  li.menu__subitem 
+                    a(href="javascript:void(0)").menu__sublink.h5 Управление жизненным циклом средств измерения и приборов учёта
+              li.menu__item.has-child             
+                a(href="javascript:void(0)").menu__link.h4 Отрасли
+                ul.menu__sublist 
+                  li.menu__subitem 
+                    a(href="javascript:void(0)").menu__sublink.h5 Цифровизация производства
+                  li.menu__subitem 
+                    a(href="javascript:void(0)").menu__sublink.h5 Нефть и газ
+                  li.menu__subitem 
+                    a(href="javascript:void(0)").menu__sublink.h5 Энергетика
+                  li.menu__subitem 
+                    a(href="javascript:void(0)").menu__sublink.h5 Промышленное производство
+                li.menu__item
+                  a(href="javascript:void(0)").menu__link.h4 Контакты
+        .page-header__right 
+          .page-header__connect 
+            a(href="tel:+7(495)2802595").page-header__phone +7 (495) 280-25-95
+            a(href="javascript:void(0)").page-header__connect-btn.btn Обратный звонок
+          .page-header__magnify
+            button.page-header__search.btn-reset 
+              svg.page-header__search-btn(width='23' height='22' viewBox='0 0 23 22' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(d='M9.11 17.22C13.589 17.22 17.22 13.589 17.22 9.11C17.22 4.63097 13.589 1 9.11 1C4.63097 1 1 4.63097 1 9.11C1 13.589 4.63097 17.22 9.11 17.22Z' stroke='#00E68A' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round' fill='none')
+                path(d='M15.52 14.28L21.6 20.36' stroke='#00E68A' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round' fill='none')
+              svg.page-header__search-close(width='20' height='19' viewBox='0 0 20 19' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(d='M17.5664 0.556641L19.2431 2.23334L2.47614 19.0003L0.799449 17.3236L17.5664 0.556641Z' fill='#00E68A')
+                path(d='M2.21094 0.556641L0.534242 2.23334L17.3012 19.0003L18.9779 17.3236L2.21094 0.556641Z' fill='#00E68A')
+          .page-header__lang 
+            a(href="javascript:void(0)").page-header__lang-btn ENG

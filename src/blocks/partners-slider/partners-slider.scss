@@ -1,0 +1,83 @@
+// В этом файле должны быть стили для БЭМ-блока partners-slider, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.partners-slider {
+
+  $block-name: &; // #{$block-name}__element
+  margin-bottom: 120px;
+
+  &__title {
+    background: linear-gradient(270deg, #00BFFF -0.23%, #00E68A 99.77%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  &__slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__logo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 146px;
+    padding: 0 40px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    filter: grayscale(99%);
+    opacity: 0.5;
+    transition: all $transition-time;
+
+    &:hover {
+      filter: grayscale(0);
+      opacity: 1;
+    }
+  }
+
+  &__prev,
+  &__next {
+    position: absolute;
+    width: 24px;
+    height: 21px;
+    top: 50%;
+    z-index: 5;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+      path {
+        fill: $black;
+        opacity: 0.2;
+        transition: opacity $transition-time;
+      }
+    }
+    &:hover {
+      svg path {
+        opacity: 1;
+      }
+    }
+
+  }
+
+  &__prev {
+    left: 0;
+
+
+  }
+
+  &__next {
+    right: 0;
+  }
+
+}

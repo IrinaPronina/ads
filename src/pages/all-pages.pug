@@ -1,0 +1,28 @@
+extends ../pug/layout.pug
+
+block meta
+  title ADS
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+
+block content  
+
+  section.section(class=allMods)&attributes(attributes)
+    .container
+      h2.title-h2.plus__title.h2 Все страницы 
+      .all-pages__inner
+        p #[a.h5(href="index.html", target="_blank").link Главная]
+
+
+//- block footer
+//-   p footer
+
+//- block append page-bottom
+//-   script(src='js/some.js')
+
+
+
+

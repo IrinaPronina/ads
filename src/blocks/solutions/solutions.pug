@@ -1,0 +1,56 @@
+//- Все примеси в этом файле должны начинаться c имени блока (solutions)
+
+mixin solutions(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +solutions('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' solutions--' + modsList[i].trim();
+      }
+    }
+
+  section.solutions.decor(class=allMods)&attributes(attributes)
+    .solutions__inner.container
+      .solutions__content
+        .solutions__top 
+          .solutions__top-title.h3 Advanced Digital Solutions
+          .solutions__top-descr 
+            p.solutions__top-text.text Команда профессионалов высокой квалификации проводит обследование, консалтинг, выбор оптимальных параметров проектного решения, реализацию, внедрение, сопровождение и&nbsp;поддержку.
+            p.solutions__top-text.text Мы&nbsp;предлагаем набор планов и&nbsp;возможностей, инноваций и&nbsp;связанных с&nbsp;ними технологических решений, которые помогают компаниям и&nbsp;промышленным предприятиям перейти на&nbsp;новые уровни автоматизации и&nbsp;цифровизации.
+            p.solutions__top-text.text Наши Заказчики&nbsp;&mdash; основные предприятия реального сектора экономики: энергетики, нефтегазодобычи, промышленного производства. Наши продукты помогают им&nbsp;контролировать критическую инфраструктуру, обеспечивают аналитику для принятия управленческих решений, оптимизируют сложные технологические процессы.
+        h2.solutions__title.h2 Решения
+        ul.solutions__grid
+          li.solutions__item
+            a(href="javascript:void(0);").solutions__body 
+              h3.solutions__subtitle.subtitle Мониторинг технологических процессов и производств
+          li.solutions__item
+            a(href="javascript:void(0);").solutions__body 
+              h3.solutions__subtitle.subtitle Энергоучёт и энергоэффективность
+          li.solutions__item
+            a(href="javascript:void(0);").solutions__body 
+              h3.solutions__subtitle.subtitle Мониторинг технологических процессов и производств
+          li.solutions__item
+            a(href="javascript:void(0);").solutions__body 
+              h3.solutions__subtitle.subtitle Мониторинг технологических процессов и производств
+          li.solutions__item
+            a(href="javascript:void(0);").solutions__body 
+              h3.solutions__subtitle.subtitle Мониторинг технологических процессов и производств
+          li.solutions__item
+            a(href="javascript:void(0);").solutions__body 
+              h3.solutions__subtitle.subtitle Мониторинг технологических процессов и производств
+          li.solutions__item
+            a(href="javascript:void(0);").solutions__body 
+              h3.solutions__subtitle.subtitle Мониторинг технологических процессов и производств
+          li.solutions__item
+            a(href="javascript:void(0);").solutions__body 
+              h3.solutions__subtitle.subtitle Мониторинг технологических процессов и производств
+        

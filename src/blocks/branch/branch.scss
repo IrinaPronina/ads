@@ -1,0 +1,329 @@
+// В этом файле должны быть стили для БЭМ-блока branch, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.branch {
+
+  $block-name: &; // #{$block-name}__element
+  padding: 148px 0;
+
+  &__title {
+    color: $white;
+    margin: 0 0 48px;
+  }
+
+  &__top {
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    background-size: cover;
+    // background-color: $main-dark;
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.24);
+    border-radius: 16px;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 40px;
+    }
+
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: -1;
+      border-radius: 16px;
+      pointer-events: none;
+      transition: all $transition-time;
+      background: linear-gradient(0deg, rgba(1, 73, 60, 0.6), rgba(1, 73, 60, 0.6)),
+        linear-gradient(180deg, rgba(0, 221, 164, 0.5) 0%, rgba(0, 212, 192, 0.5) 100%);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: -1;
+      border-radius: 16px;
+      pointer-events: none;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45));
+      transition: all $transition-time;
+      opacity: 0;
+    }
+
+    &:hover {
+      &:before {
+        opacity: 0;
+      }
+
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__link {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: $white;
+    z-index: 2;
+  }
+
+  &__item-body {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__item-title {
+    margin: 0 0 32px;
+    text-align: center;
+
+    @media (min-width: $screen-xl) {
+      margin: 0 0 38px;
+    }
+  }
+
+  &__item-subtitle {
+    padding: 0;
+    position: relative;
+
+
+    @media (min-width: $screen-lg) {
+      margin-right: 64px;
+    }
+
+
+    &:first-child::after,
+    &:nth-child(2)::after {
+      position: absolute;
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: $white;
+      bottom: -21px;
+      right: 50%;
+      transform: translateY(-50%);
+
+      @media (min-width: $screen-lg) {
+        top: 50%;
+        right: -32px;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 42px;
+
+      @media (min-width: $screen-lg) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__item-bottom {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    list-style: none;
+
+    @media (min-width: $screen-lg) {
+      flex-direction: row;
+    }
+  }
+
+  &__grid {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+
+    @media (min-width: $screen-xl) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    background-repeat: no-repeat;
+    background-color: $main-dark;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 16px;
+
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.24);
+    z-index: 1;
+
+    @media (min-width: $screen-xl) {
+      aspect-ratio: 1/1;
+    }
+
+
+    &::after {
+
+      @media (min-width: $screen-xl) {
+        position: absolute;
+        content: "";
+        height: 40px;
+        width: 3px;
+        background-color: $white;
+        top: -40px;
+        left: 50%;
+      }
+    }
+
+    &:nth-child(1) {
+      .branch__body {
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          z-index: -1;
+          border-radius: 16px;
+          pointer-events: none;
+          background: linear-gradient(0deg, rgba(0, 16, 91, 0.55), rgba(0, 16, 91, 0.55));
+          transition: all $transition-time;
+          opacity: 0;
+        }
+
+        &:hover {
+          &:before {
+            opacity: 0;
+          }
+
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+
+    }
+
+    &:nth-child(2) {
+      .branch__body {
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          z-index: -1;
+          border-radius: 16px;
+          pointer-events: none;
+          background: linear-gradient(0deg, rgba(237, 28, 36, 0.5), rgba(237, 28, 36, 0.5));
+          transition: all $transition-time;
+          opacity: 0;
+        }
+
+        &:hover {
+          &:before {
+            opacity: 0;
+          }
+
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      .branch__body {
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          z-index: -1;
+          border-radius: 16px;
+          pointer-events: none;
+          background: linear-gradient(0deg, rgba(0, 71, 99, 0.66), rgba(0, 71, 99, 0.66));
+          transition: all $transition-time;
+          opacity: 0;
+        }
+
+        &:hover {
+          &:before {
+            opacity: 0;
+          }
+
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    @media (min-width: $screen-xl) {
+      padding: 48px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: -1;
+      border-radius: 16px;
+      pointer-events: none;
+      background: linear-gradient(0deg, rgba(1, 73, 60, 0.6), rgba(1, 73, 60, 0.6)),
+        linear-gradient(180deg, rgba(0, 221, 164, 0.5) 0%, rgba(0, 212, 192, 0.5) 100%);
+      transition: all $transition-time;
+    }
+  }
+
+  &__title-h3 {
+
+    margin: 0 0 32px;
+
+    @media (min-width: $screen-xl) {
+      min-height: 86px;
+      margin: 0 0 40px;
+    }
+  }
+
+  &__bottom {
+    list-style: disc;
+  }
+
+  &__subtitle {
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+}

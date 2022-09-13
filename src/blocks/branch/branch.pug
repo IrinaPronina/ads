@@ -1,0 +1,62 @@
+//- Все примеси в этом файле должны начинаться c имени блока (branch)
+
+mixin branch(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +branch('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' branch--' + modsList[i].trim();
+      }
+    }
+
+  section.branch.section--angled
+    .branch__inner.container
+      h2.branch__title.h2 Отрасли 
+      .branch__block 
+        .branch__top(style="background-image: url(img/branch1.jpg);") 
+          a(href="javascript:void(0);").branch__link
+            .branch__item-body
+              h3.branch__item-title.h3 Цифровизация производства
+              ul.branch__item-bottom 
+                li.branch__item-subtitle.h5 Цифровые двойники
+                li.branch__item-subtitle.h5 Достоверность данных
+                li.branch__item-subtitle.h5 Проактивные приложения
+                li.branch__item-subtitle.h5 Распределённая командная работа и цифровой рабочий
+        ul.branch__grid 
+          .branch__item(style="background-image: url(img/branch2.jpg);")  
+            a(href="javascript:void(0);").branch__link
+              .branch__body 
+                h3.branch__title-h3.h3 Нефть и газ
+                ul.branch__bottom 
+                  li.branch__subtitle.h5 Цифровые двойники
+                  li.branch__subtitle.h5 Цифровое бурение
+                  li.branch__subtitle.h5 Интегрированное планирование и оптимизация
+                  li.branch__subtitle.h5 Переработка и сбыт
+                  li.branch__subtitle.h5 Корпоративные сервисы
+          .branch__item(style="background-image: url(img/branch3.jpg);")  
+            a(href="javascript:void(0);").branch__link
+              .branch__body 
+                h3.branch__title-h3.h3 Энергетика
+                ul.branch__bottom 
+                  li.branch__subtitle.h5 Генерация
+                  li.branch__subtitle.h5 Ресурсоснабжающие организации и сбыт
+                  li.branch__subtitle.h5 Корпоративные сервисы
+          .branch__item(style="background-image: url(img/branch4.png);")  
+            a(href="javascript:void(0);").branch__link
+              .branch__body 
+                h3.branch__title-h3.h3 Промышленное производство
+                ul.branch__bottom 
+                  li.branch__subtitle.h5 Цифровые двойники
+                  li.branch__subtitle.h5 Достоверность данных
+                  li.branch__subtitle.h5 Проактивные приложения
+                  li.branch__subtitle.h5 Распределённая командная работа и цифровой рабочий
+

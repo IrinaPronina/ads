@@ -1,0 +1,59 @@
+// В этом файле должны быть стили для БЭМ-блока plus, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.plus {
+
+  $block-name: &; // #{$block-name}__element
+
+  background-repeat: no-repeat;
+  background-color: $white;
+  background-position: center center;
+  background-size: cover;
+  padding-bottom: 120px;
+  margin-top: 204px;
+  z-index: -1;
+
+  &__title {
+    background: linear-gradient(270deg, #00BFFF -0.23%, #00E68A 99.77%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  &__grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+
+    @media (min-width: $screen-lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 32px;
+
+    @media (min-width: $screen-xxl) {
+      width: 96px;
+      height: 96px;
+    }
+  }
+
+  &__descr {
+    color: $main-dark;
+    text-transform: uppercase;
+    font: 22px/1.3 $ff-i-sb;
+    font-weight: 600;
+    text-align: center;
+  }
+}

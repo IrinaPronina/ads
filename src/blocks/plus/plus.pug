@@ -1,0 +1,41 @@
+//- Все примеси в этом файле должны начинаться c имени блока (plus)
+
+mixin plus(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +plus('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' plus--' + modsList[i].trim();
+      }
+    }
+
+  section.plus(style="background-image: url(img/content-logo.svg);")
+    .plus__inner.container
+      h2.plus__title.h2 Преимущества
+      ul.plus__grid 
+        li.plus__item 
+          .plus__body
+            img(src="img/ino.svg", aria-hidden=true).plus__img
+            .plus__descr Инновационность разработок
+        li.plus__item 
+          .plus__body
+            img(src="img/int.svg", aria-hidden=true).plus__img
+            .plus__descr Глубокая интеграция
+        li.plus__item 
+          .plus__body
+            img(src="img/sup.svg", aria-hidden=true).plus__img
+            .plus__descr Поддержка и сопровождение
+        li.plus__item 
+          .plus__body
+            img(src="img/creative.svg", aria-hidden=true).plus__img
+            .plus__descr Креативность
+

@@ -1,0 +1,575 @@
+// В этом файле должны быть стили для БЭМ-блока page-header, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.page-header {
+
+  $block-name: &; // #{$block-name}__element
+
+  background-color: $main-dark;
+  color: $white;
+
+  &__top {
+    padding: 16px 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media (min-width: $screen-xxl) {
+      padding: 40px 0 47px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding: 32px 0 32px;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding: 24px 0 12px;
+    }
+
+  }
+
+  &__left {
+    width: 83%;
+    order: 1;
+
+    @media (min-width: $screen-xxl) {
+      margin-right: 78px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 22%;
+    }
+
+    @media (min-width: $screen-sm) {
+      width: 28%;
+    }
+  }
+
+  &__menu {
+    order: 3;
+    width: 37%;
+    display: flex;
+    justify-content: flex-end;
+
+    @media (min-width: $screen-xxl) {}
+
+    @media (min-width: $screen-xl) {
+      width: 40%;
+      order: 2;
+    }
+
+    @media (min-width: $screen-lg) {
+      width: 12%;
+    }
+
+  }
+
+  &__right {
+    order: 2;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: $screen-xl) {
+      order: 3;
+      width: 30%;
+    }
+
+    @media (min-width: $screen-lg) {
+      justify-content: space-between;
+    }
+
+    @media (min-width: $screen-sm) {
+      width: 45%;
+    }
+  }
+
+  &__connect-btn {
+    display: none;
+
+    @media (min-width: $screen-xl) {
+      display: block;
+    }
+
+  }
+
+  &__phone {
+    display: none;
+
+    color: $main-light;
+    font: 14px $ff-i-b;
+    letter-spacing: 0.02em;
+
+
+    @media (min-width: $screen-xxl) {
+      font-size: 20px;
+      margin-bottom: 32px;
+    }
+
+    @media (min-width: $screen-lg) {
+      font-size: 17px;
+      margin-bottom: 24px;
+      display: block;
+    }
+  }
+
+  &__magnify {
+    display: flex;
+
+  }
+
+  &__search {
+    width: 22px;
+    height: 22px;
+
+  }
+
+  &__search-close {
+    display: none;
+  }
+
+  &__lang {
+    display: none;
+    color: $white;
+
+    @media (min-width: $screen-xxl) {
+      font-size: 18px;
+    }
+
+    @media (min-width: $screen-xl) {
+      font-size: 15px;
+    }
+
+    @media (min-width: $screen-lg) {
+      display: block;
+      ;
+    }
+  }
+
+  &__lang-btn {
+    color: $white;
+    text-decoration: none;
+    font: 15px/1.2 $ff-i-m;
+    font-weight: 500;
+    transition: all $transition-time;
+  }
+}
+
+
+.menu {
+
+  &__body {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+
+    @media (min-width: $screen-xxl) {
+      width: auto;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 100%;
+      overflow: visible;
+    }
+
+    @media (min-width: $screen-lg) {
+      width: 55%;
+    }
+
+    @media (min-width: $screen-md) {
+      width: 73%;
+    }
+
+    @media (min-width: $screen-sm) {
+      width: 81%;
+    }
+
+    @media (max-width: ($screen-xl - 1)) {
+      position: fixed;
+      top: 0;
+      right: -1000px;
+      height: 100%;
+      z-index: 99;
+      background: linear-gradient(0deg, #00BFFF 0%, #00E68A 100%);
+      padding: 24px 32px;
+      transition: right $transition-time;
+    }
+
+    &.active {
+      @media (max-width: ($screen-xl - 1)) {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        z-index: 99;
+        background: linear-gradient(0deg, #00BFFF 0%, #00E68A 100%);
+        padding: 24px 32px;
+        transition: right $transition-time;
+      }
+
+    }
+
+
+
+    &::before {
+      display: block;
+      position: absolute;
+      content: '';
+      pointer-events: none;
+      top: 0px;
+      left: -24%;
+      width: 24%;
+      height: 100%;
+      background-color: $main-dark;
+      opacity: 0.2;
+      transition: all $transition-time;
+
+
+      @media (min-width: $screen-xl) {
+        display: none;
+      }
+
+      @media (min-width: $screen-lg) {
+        left: -82%;
+        width: 82%;
+      }
+
+      @media (min-width: $screen-md) {
+        left: -37%;
+        width: 37%;
+      }
+    }
+
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+
+    @media (min-width: $screen-xl) {
+      display: flex;
+    }
+
+    @media (min-width: $screen-lg) {}
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    cursor: pointer;
+    border-bottom: 1px solid $black;
+
+    &:last-child {
+      margin: 0;
+      border-bottom: none;
+    }
+
+    @media (min-width: $screen-xxl) {
+      margin: 0 56px 0 0px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin: 0 32px 0 0px;
+
+      &:hover {
+        .menu__sublist {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+          pointer-events: all;
+        }
+      }
+    }
+
+    @media (min-width: $screen-lg) {
+      border-bottom: none;
+    }
+
+
+    &.has-child {
+
+      &::after {
+        position: absolute;
+        content: '';
+        pointer-events: none;
+        transition: all $transition-time;
+
+        @media (min-width: $screen-xl) {
+          display: block;
+          top: 8px;
+          right: -12px;
+          width: 0;
+          height: 0;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-top: 5px solid $white;
+          transition: all $transition-time;
+        }
+
+        @media (max-width: ($screen-xl - 1)) {
+          background-image: url("../img/-.svg");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: cover;
+          top: 0px;
+          right: 0px;
+          width: 24px;
+          height: 24px;
+          background-color: $white;
+        }
+      }
+
+      &::before {
+        display: block;
+        position: absolute;
+        content: '';
+        pointer-events: none;
+        top: 4px;
+        right: 11px;
+        width: 1.6px;
+        height: 16px;
+        background-color: $main-dark;
+        z-index: 3;
+        opacity: 1;
+        transition: all $transition-time;
+
+        @media (min-width: $screen-xl) {
+          display: none;
+        }
+      }
+    }
+
+
+
+    @media (min-width: $screen-xl) {
+
+      &:hover,
+      &:active {
+
+        .menu__link {
+          color: $main-light;
+        }
+
+        &.has-child::after {
+          border-top: 5px solid $main-light;
+        }
+
+      }
+    }
+
+
+    &.open {
+      &::before {
+        opacity: 0;
+      }
+
+      & .menu__sublist {
+        max-height: 500px;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    color: $black;
+    text-decoration: none;
+    margin-bottom: 24px;
+    font-weight: 500;
+    transition: all $transition-time;
+
+    @media (min-width: $screen-xxl) {
+      font-size: 18px;
+    }
+
+    @media (min-width: $screen-xl) {
+      color: $white;
+      margin-bottom: 0;
+      font-size: 15px;
+    }
+  }
+
+  &__sublist {
+    list-style: none;
+    transition: all $transition-time;
+
+    @media (min-width: $screen-xl) {
+      display: block;
+      position: absolute;
+      border-radius: 8px;
+      filter: drop-shadow(0px 8px 32px rgba(0, 0, 0, 0.24));
+      top: 38px;
+      left: -130px;
+      background-color: $white;
+      width: 350px;
+      height: auto;
+      padding: 8px 0;
+      z-index: 5;
+      transform: translateY(10%);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all $transition-time;
+
+      &::before {
+        position: absolute;
+        content: '';
+        background-color: $white;
+        top: -8px;
+        right: 50%;
+        width: 16px;
+        height: 16px;
+        z-index: -1;
+        transform: rotate(45deg);
+      }
+    }
+
+    @media (max-width: ($screen-xl - 1)){
+      padding: 0;
+      background-color: transparent;
+      max-height: 0;
+      opacity: 0;
+    }
+
+  }
+
+  &__subitem {
+    position: relative;
+    padding: 8px 24px;
+
+    cursor: pointer;
+    transition: all $transition-time;
+
+    @media (min-width: $screen-xl) {
+      &:hover {
+        background-color: $main-light;
+      }
+    }
+
+    @media (min-width: $screen-xl) {
+      background-color: $white;
+    }
+
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 14px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid $white;
+      display: block;
+      transform: rotate(-90deg);
+      transition: all $transition-time;
+
+      @media (min-width: $screen-xl) {
+        display: none;
+      }
+    }
+
+
+  }
+
+  &__sublink {
+    color: $main-dark;
+    text-decoration: none;
+  }
+
+  &__burger {
+    display: flex;
+    align-items: center;
+
+    @media (min-width: $screen-xl) {
+      display: none;
+    }
+  }
+
+  &__icon {
+    z-index: 5;
+    position: relative;
+    width: 24px;
+    height: 18px;
+    margin-right: 8px;
+    cursor: pointer;
+
+    @media (min-width: $screen-xl) {
+      width: 30px;
+    }
+
+    @media (min-width: $screen-lg) {
+      margin-right: 16px;
+    }
+
+
+
+    &:before,
+    &:after,
+    & span {
+      position: absolute;
+      height: 10%;
+      border-radius: 5px;
+      background-color: $white;
+      transition: all $transition-time;
+    }
+
+    & span {
+      width: 80%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      width: 100%;
+    }
+
+    &:before {
+      top: 0;
+    }
+
+    &:after {
+      bottom: 0;
+    }
+  }
+
+  &__text {
+    font: 13px/1.2 $ff-i-r;
+    font-weight: 500;
+
+    @media (min-width: $screen-lg) {
+      font-size: 15px;
+      font-weight: 700;
+    }
+  }
+
+  &__top {
+    display: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+
+    & .menu__text {
+      font: 25px/1.2 $ff-i-b;
+    }
+
+    @media (min-width: $screen-xl) {
+      display: none;
+    }
+  }
+
+  &__mob-close {
+    width: 24px;
+    height: 19px;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+  }
+}

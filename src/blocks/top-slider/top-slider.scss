@@ -1,0 +1,92 @@
+// В этом файле должны быть стили для БЭМ-блока top-slider, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.top-slider {
+
+
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+
+
+  @media (max-width: ($screen-md - 1)) {
+    display: none;
+  }
+
+  &__body {
+    max-width: 960px;
+    padding: 11% 0 19%;
+    padding-left: 10%;
+  }
+
+  &__img {
+    background-repeat: no-repeat;
+    background-color: $main-light;
+    background-position: center center;
+    background-size: cover;
+
+  }
+
+  &__title {
+    font: 80px $ff-i-sb;
+    font-weight: 600;
+    color: $white;
+    margin: 0 0 24px;
+  }
+
+  &__descr {
+    font: 24px/1.5 $ff-i-sb;
+    font-weight: 600;
+    color: $black;
+    margin: 0;
+  }
+
+  &__prev {
+    position: absolute;
+    bottom: 100px;
+    z-index: 5;
+
+    svg path {
+      opacity: 1;
+    }
+  }
+
+  &__next {
+    position: absolute;
+    bottom: 100px;
+    z-index: 5;
+    right: 13%;
+
+    svg path {
+      opacity: 1;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    bottom: 100px !important;
+    left: 21% !important;
+    width: var(--container-width) !important;
+    max-width: 960px;
+  }
+
+  .swiper-button-disabled {
+    svg path {
+      opacity: 0.5;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+    margin: 0 24px 0 0 !important;
+    background-color: $main-dark;
+    opacity: 1;
+    transition: all $transition-time;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $white;
+  }
+}
