@@ -1,0 +1,49 @@
+//- Все примеси в этом файле должны начинаться c имени блока (download)
+
+mixin download(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +download('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' download--' + modsList[i].trim();
+      }
+    }
+
+  ul.download
+    li.download__item 
+      .download__body
+        .download__pic 
+          svg(width='32' height='34' viewBox='0 0 32 34' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M28.3346 33H4.33333C3.97971 33 3.64057 32.8595 3.39052 32.6095C3.14048 32.3594 3 32.0203 3 31.6667V2.33333C3 1.97971 3.14048 1.64057 3.39052 1.39052C3.64057 1.14048 3.97971 1 4.33333 1H20.3346L29.668 10.3333V31.6667C29.668 31.8418 29.6335 32.0151 29.5665 32.1769C29.4995 32.3387 29.4013 32.4857 29.2774 32.6095C29.1536 32.7333 29.0066 32.8315 28.8449 32.8985C28.6831 32.9655 28.5097 33 28.3346 33Z' stroke='#00BFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none')
+            path(d='M20.334 1V10.3333H29.6686' stroke='#00BFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none')
+            path(d='M11.666 21.6665L16.3327 26.3332L20.9993 21.6665' stroke='#00BFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none')
+            path(d='M16.334 15.6665V26.3332' stroke='#00BFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none')
+        .download__content
+          .download__title
+            h3.download__h3.h5 Документ №1
+          .download__subtitle
+            p.download__text.text Дополнительная информация описания документа.
+          +hyperlink()
+    li.download__item 
+      .download__body
+        .download__pic 
+          svg(width='32' height='34' viewBox='0 0 32 34' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M28.3346 33H4.33333C3.97971 33 3.64057 32.8595 3.39052 32.6095C3.14048 32.3594 3 32.0203 3 31.6667V2.33333C3 1.97971 3.14048 1.64057 3.39052 1.39052C3.64057 1.14048 3.97971 1 4.33333 1H20.3346L29.668 10.3333V31.6667C29.668 31.8418 29.6335 32.0151 29.5665 32.1769C29.4995 32.3387 29.4013 32.4857 29.2774 32.6095C29.1536 32.7333 29.0066 32.8315 28.8449 32.8985C28.6831 32.9655 28.5097 33 28.3346 33Z' stroke='#00BFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none')
+            path(d='M20.334 1V10.3333H29.6686' stroke='#00BFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none')
+            path(d='M11.666 21.6665L16.3327 26.3332L20.9993 21.6665' stroke='#00BFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none')
+            path(d='M16.334 15.6665V26.3332' stroke='#00BFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none')
+        .download__content
+          .download__title
+            h3.download__h3.h5 Документ №1
+          .download__subtitle
+            p.download__text.text Дополнительная информация описания документа.
+          +hyperlink()

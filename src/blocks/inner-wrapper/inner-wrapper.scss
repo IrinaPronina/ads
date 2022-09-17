@@ -1,0 +1,42 @@
+// В этом файле должны быть стили для БЭМ-блока inner-wrapper, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.inner-wrapper {
+
+  $block-name:                &; // #{$block-name}__element
+
+  
+  > :last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  &__top {
+    padding: 1px 0;
+    background-repeat: no-repeat;
+    background-color: $main-dark;
+    background-position: center center;
+    background-size: cover;
+
+    @media (min-width: $screen-xxl) {
+      padding-top: 80px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding: 24px 0 0 0;
+    }
+
+    // & + *:not(.menu-vertical):not(.docs) {
+    //   margin-top: 50px;
+
+    //   @media (min-width: $screen-xxl) {
+    //     margin-top: 94px;
+    //   }
+
+    //   @media (min-width: $screen-xl) {
+    //     margin-top: 70px;
+    //   }
+    // }
+  }
+}

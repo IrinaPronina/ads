@@ -1,0 +1,46 @@
+//- Все примеси в этом файле должны начинаться c имени блока (solutions-grid)
+
+mixin solutions-grid(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+    +solutions-grid('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' solutions-grid--' + modsList[i].trim();
+      }
+    }
+
+  ul.solutions-grid(class=allMods)&attributes(attributes)
+    li.solutions-grid__item
+      a(href="javascript:void(0);").solutions-grid__body 
+        h3.solutions-grid__subtitle.h5 Мониторинг технологических процессов и производств
+    li.solutions-grid__item
+      a(href="javascript:void(0);").solutions-grid__body 
+        h3.solutions-grid__subtitle.h5 Энергоучёт и энергоэффективность
+    li.solutions-grid__item
+      a(href="javascript:void(0);").solutions-grid__body 
+        h3.solutions-grid__subtitle.h5 Промышленная безопасность персонала
+    li.solutions-grid__item
+      a(href="javascript:void(0);").solutions-grid__body 
+        h3.solutions-grid__subtitle.h5 Планирование и оптимизация производственных процессов
+    li.solutions-grid__item
+      a(href="javascript:void(0);").solutions-grid__body 
+        h3.solutions-grid__subtitle.h5 Аналитика и визуализация, моделирование и прогнозирование, управление данными
+    li.solutions-grid__item
+      a(href="javascript:void(0);").solutions-grid__body 
+        h3.solutions-grid__subtitle.h5 Поддержка процессов эксплуатации и ремонтов оборудования
+    li.solutions-grid__item
+      a(href="javascript:void(0);").solutions-grid__body 
+        h3.solutions-grid__subtitle.h5 Цифровой персонал / Цифровое рабочее место
+    li.solutions-grid__item
+      a(href="javascript:void(0);").solutions-grid__body 
+        h3.solutions-grid__subtitle.h5 Цифровое зрение: ИИ, Большие данные, Глубокое обучение
+

@@ -14,13 +14,120 @@
 
 .section--angled {
   z-index: 10;
-  --section-padding: 80px;
+  --section-padding: 12px;
   --clip-point: calc(100% - var(--section-padding));
 
 
   clip-path: polygon(0 0, 100% var(--section-padding), 100% 100%, 0% var(--clip-point));
   background: linear-gradient(0deg, #00BFFF 0%, #00E68A 100%);
+
+  @media (min-width: $screen-xxl) {
+    --section-padding: 80px;
+  }
+
+  @media (min-width: $screen-xl) {
+    --section-padding: 52px;
+  }
+
+  @media (min-width: $screen-lg) {
+    --section-padding: 46px;
+  }
+
+  @media (min-width: $screen-md) {
+    --section-padding: 30px;
+  }
+
+  @media (min-width: $screen-sm) {
+    --section-padding: 20px;
+  }
 }
+
+.footer--angled {
+  z-index: 10;
+  --section-padding: 12px;
+  --clip-point: calc(100% - var(--section-padding));
+
+
+  clip-path: polygon(0 0, 100% var(--section-padding), 100% 100%, 0% 100%);
+  background: $main-dark;
+
+  @media (min-width: $screen-xxl) {
+    --section-padding: 80px;
+  }
+
+  @media (min-width: $screen-xl) {
+    --section-padding: 52px;
+  }
+
+  @media (min-width: $screen-lg) {
+    --section-padding: 46px;
+  }
+
+  @media (min-width: $screen-md) {
+    --section-padding: 30px;
+  }
+
+  @media (min-width: $screen-sm) {
+    --section-padding: 20px;
+  }
+}
+
+.bottom--angled {
+  z-index: 10;
+  --section-padding: 12px;
+  --section-padding-minus: -12px;
+  --clip-point: calc(100% - var(--section-padding));
+
+
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% var(--clip-point));
+  background: $main-dark;
+
+  @media (min-width: $screen-xxl) {
+    --section-padding: 80px;
+  }
+
+  @media (min-width: $screen-xl) {
+    --section-padding: 52px;
+  }
+
+  @media (min-width: $screen-lg) {
+    --section-padding: 46px;
+  }
+
+  @media (min-width: $screen-md) {
+    --section-padding: 30px;
+  }
+
+  @media (min-width: $screen-sm) {
+    --section-padding: 20px;
+  }
+}
+
+.mb-section-angled {
+  margin-bottom: -12px;
+
+  @media (min-width: $screen-xxl) {
+    margin-bottom: -80px;
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: -52px;
+  }
+
+  @media (min-width: $screen-lg) {
+    margin-bottom: -46px;
+  }
+
+  @media (min-width: $screen-md) {
+    margin-bottom: -30px;
+  }
+
+  @media (min-width: $screen-sm) {
+    margin-bottom: -20px;
+  }
+}
+
+
 
 
 
@@ -33,20 +140,43 @@
   &:after {
     content: "";
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%) rotate(2deg);
+    left: 0;
+    transform: skewY(2.5deg);
+
     width: 100vw;
     height: 100px;
+
+
   }
 
   &:before {
-    top: -40px;    background-color: $main-light;
+    transform-origin: 100% 0;
+    height: 53px;
+    top: -31px;
+    background-color: $main-light;
+
+    @media (min-width: $screen-xl) {
+      top: 0;
+    }
+    @media (min-width: $screen-md) {
+      top: -24px;
+    }
+
+    @media (min-width: $screen-sm) {
+      height: 100px;
+
+    }
   }
 
   &:after {
-    bottom: -40px;
+    transform-origin: 100%;
+    bottom: -32px;
     background-color: $color-accent;
     z-index: -1;
+
+    @media (min-width: $screen-sm) {
+      bottom: -80px;
+    }
   }
 }
 
@@ -79,7 +209,7 @@
   }
 
   &:focus {
-    border: 2px solid #64D8FF;
+    outline: 2px solid #64D8FF;
   }
 
   &:active {
@@ -93,14 +223,15 @@
   }
 
   @media (min-width: $screen-md) {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 
 /*--- Text---*/
 
 .h2 {
-  font: 36px/1.5 $ff-i-sb;
+  margin: 0;
+  font: 28px/1.2 $ff-i-sb;
   font-weight: 600;
   letter-spacing: 0.02em;
 
@@ -108,15 +239,38 @@
     font-size: 72px;
   }
 
-  @media (min-width: $screen-xl) {
+  @media (min-width: $screen-lg) {
     font-size: 60px;
   }
 }
 
+.h2-inner {
+  margin: 0;
+  font: 28px/1.2 $ff-i-sb;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+
+  @media (min-width: $screen-xxl) {
+    font-size: 48px;
+  }
+
+  @media (min-width: $screen-lg) {
+    font-size: 40px;
+  }
+}
+
 .h3 {
-  font: 36px $ff-i-b;
+  font: 25px $ff-i-b;
   font-weight: 700;
   letter-spacing: 0.02em;
+
+  @media (min-width: $screen-xxl) {
+    font-size: 36px;
+  }
+
+  @media (min-width: $screen-lg) {
+    font-size: 30px;
+  }
 }
 
 .h4 {
@@ -132,16 +286,18 @@
     font-size: 22px;
   }
 }
+
 .h5 {
   font: 15px/1.3 $ff-i-sb;
   font-weight: 600;
   letter-spacing: 0.05em;
+  margin: 0;
 
   @media (min-width: $screen-xxl) {
     font-size: 20px;
   }
 
-  @media (min-width: $screen-xl) {
+  @media (min-width: $screen-lg) {
     font-size: 17px;
   }
 }
@@ -149,7 +305,7 @@
 
 .text {
 
-  font: 13px/1.5 $ff-i-r;
+  font: 14px/1.5 $ff-i-r;
   font-weight: 400;
   letter-spacing: 0.05em;
 
@@ -157,7 +313,21 @@
     font-size: 18px;
   }
 
-  @media (min-width: $screen-xl) {
+  @media (min-width: $screen-lg) {
+    font-size: 15px;
+  }
+}
+
+.text-bold {
+
+  font: 14px/1.5 $ff-i-b;
+  letter-spacing: 0.05em;
+
+  @media (min-width: $screen-xxl) {
+    font-size: 18px;
+  }
+
+  @media (min-width: $screen-lg) {
     font-size: 15px;
   }
 }
@@ -171,4 +341,19 @@
   @media (min-width: $screen-md) {
     font-size: 20px;
   }
+
+}
+
+.slider-text {
+  font: 18px/1.5 $ff-i-sb;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+
+  @media (min-width: $screen-xxl) {
+    font-size: 24px;
+  }
+}
+
+.pt-16 {
+  padding-top: 16px;
 }

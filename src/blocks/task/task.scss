@@ -1,0 +1,58 @@
+// В этом файле должны быть стили для БЭМ-блока task, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.task {
+
+  $block-name: &;
+
+  margin-bottom: 40px;
+  @media (min-width: $screen-lg) {
+    margin-bottom: 64px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 30px;
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 56px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding-left: 20px;
+    @media (min-width: $screen-lg) {
+      padding-left: 26px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: $black;
+
+    p{
+      margin: 0;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 6px;
+      left: -20px;
+      width: 10px;
+      height: 10px;
+      background-color: $color-accent;
+      @media (min-width: $screen-lg) {
+        left: -26px;
+      }
+    }
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 26px;
+    }
+  }
+}

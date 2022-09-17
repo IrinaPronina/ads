@@ -1,0 +1,29 @@
+extends ../pug/layout.pug
+
+block meta
+  title Контакты
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+
+
+block content
+  +inner-wrapper()
+    +inner-wrapper-top(style="background-image: url(img/bgrd_contacts.jpg);")
+      +breadcrumbs()
+        +breadcrumbs-item('Главная', '/')
+        +breadcrumbs-item('Контакты')
+      +main-title('Контакты')
+  +map()
+
+
+
+
+
+//- block footer
+//-   p footer
+
+//- block append page-bottom
+//-   script(src='js/some.js')

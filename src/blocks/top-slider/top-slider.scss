@@ -10,14 +10,34 @@
   position: relative;
 
 
-  @media (max-width: ($screen-md - 1)) {
-    display: none;
-  }
-
   &__body {
-    max-width: 960px;
-    padding: 11% 0 19%;
-    padding-left: 10%;
+    max-width: 540px;
+    padding: 10% 0 19%;
+
+    @media (min-width: $screen-xxl) {
+      max-width: 960px;
+      padding: 154px 136px 272px;
+    }
+
+    @media (min-width: $screen-xl) {
+      max-width: 670px;
+      padding: 6% 0 17% 10%;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding: 8% 0 17% 10%;
+      max-width: 540px;
+    }
+
+    @media (min-width: $screen-md) {
+      padding: 5% 0 11% 0%;
+      max-width: 547px;
+    }
+
+    @media (min-width: $screen-sm) {
+      padding: 5% 0 10%;
+      max-width: 547px;
+    }
   }
 
   &__img {
@@ -29,23 +49,59 @@
   }
 
   &__title {
-    font: 80px $ff-i-sb;
+    font: 32px $ff-i-sb;
     font-weight: 600;
     color: $white;
-    margin: 0 0 24px;
+    margin: 0 0 14px;
+
+    @media (min-width: $screen-xxl) {
+      font-size: 80px;
+    }
+
+    @media (min-width: $screen-lg) {
+      font-size: 56px;
+      margin: 0 0 24px;
+    }
+
+    @media (min-width: $screen-md) {
+      margin: 0 0 30px;
+    }
+    @media (min-width: $screen-sm) {
+      margin: 0 0 24px;
+    }
+
   }
 
   &__descr {
-    font: 24px/1.5 $ff-i-sb;
+    font: 18px/1.5 $ff-i-sb;
     font-weight: 600;
     color: $black;
     margin: 0;
+
+    @media (min-width: $screen-xxl) {
+      font-size: 24px;
+    }
+  }
+
+  &__nav {
+    position: relative;
   }
 
   &__prev {
     position: absolute;
-    bottom: 100px;
+    bottom: 20px;
+    width: 24px;
     z-index: 5;
+    padding: 0;
+
+    @media (min-width: $screen-lg) {
+      bottom: 100px;
+      width: 40px;
+    }
+
+    svg {
+      width: 100%;
+    }
 
     svg path {
       opacity: 1;
@@ -54,21 +110,58 @@
 
   &__next {
     position: absolute;
-    bottom: 100px;
+    width: 24px;
+    bottom: 20px;
     z-index: 5;
-    right: 13%;
+    right: 0%;
+    padding: 0;
+
+    @media (min-width: $screen-lg) {
+      right: 0;
+      bottom: 100px;
+      width: 40px;
+    }
+
+    svg {
+      width: 100%;
+    }
 
     svg path {
       opacity: 1;
     }
   }
 
+  &__pagination-wrapper {
+    position: relative;
+  }
+
   &__pagination {
     display: flex;
-    bottom: 100px !important;
-    left: 21% !important;
+    justify-content: center;
+    bottom: 20px !important;
     width: var(--container-width) !important;
     max-width: 960px;
+
+    @media (min-width: $screen-xxl) {
+      bottom: 118px !important;
+      left: 10% !important;
+    }
+
+    @media (min-width: $screen-xl) {
+      bottom: 100px !important;
+      left: 14% !important;
+      justify-content: flex-start;
+    }
+
+    @media (min-width: $screen-lg) {
+      bottom: 100px !important;
+      left: 17% !important;
+      justify-content: flex-start;
+    }
+
+    @media (min-width: $screen-sm) {
+      bottom: 32px !important;
+    }
   }
 
   .swiper-button-disabled {

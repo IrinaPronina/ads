@@ -1,0 +1,36 @@
+// В этом файле должны быть стили для БЭМ-блока text-block, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.text-block {
+
+  $block-name: &;
+  margin-bottom: 40px;
+
+  @media (min-width: $screen-lg) {
+    margin-bottom: 64px;
+  }
+
+  &__text {
+
+    margin-bottom: 16px;
+
+    @media (min-width: $screen-xl) {}
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: $screen-md) {}
+
+    @media (min-width: $screen-sm) {}
+  }
+
+  &__h2 {
+    margin-bottom: 36px;
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 56px;
+    }
+  }
+}

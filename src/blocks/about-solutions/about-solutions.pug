@@ -1,0 +1,30 @@
+//- Все примеси в этом файле должны начинаться c имени блока (about-solutions)
+
+mixin about-solutions(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +about-solutions('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' about-solutions--' + modsList[i].trim();
+      }
+    }
+
+  section.about-solutions
+    .about-solutions__inner.container
+    +text-block()
+    +best()
+    +task()
+    +apply()
+    +projects()
+    +partners()
+    +more()
+

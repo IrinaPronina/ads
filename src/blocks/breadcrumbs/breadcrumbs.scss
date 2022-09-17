@@ -7,29 +7,48 @@
   margin-top: $typo-margin-vertical;
   margin-bottom: $typo-margin-vertical;
   padding: 0;
-  color: $text-color;
+  color: $white;
+  font: 13px/1.2 $ff-i-r;
+  letter-spacing: 0.05em;
+
+  @media (min-width: $screen-xxl) {
+    font-size: 18px;
+  }
+
+  @media (min-width: $screen-xl) {
+    font-size: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
 
   a {
-    color: $text-color;
+    color: $white;
+    opacity: 1;
     text-decoration: none;
+    transition: all $transition-time;
 
     &:hover,
     &:focus {
-      color: $text-color;
+      color: $main-dark;
       text-decoration: none;
     }
+  }
+
+  span {
+    opacity: 0.5;
   }
 
   &__item {
     display: inline-block;
     margin-right: 0.6em;
-    white-space: nowrap;
+
 
     &:not(:last-child):after {
-      content: '>';
+      content: '|';
       display: inline-block;
       margin-left: 0.8em;
-      color: $gray;
+      color: $white;
     }
   }
 }

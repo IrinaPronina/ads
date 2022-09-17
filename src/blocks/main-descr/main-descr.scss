@@ -1,0 +1,22 @@
+// В этом файле должны быть стили для БЭМ-блока main-descr, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.main-descr {
+
+  $block-name:                &; // #{$block-name}__element
+
+  
+  color: black;
+  display: none;
+  @media (min-width: $screen-xxl) {
+    max-width: 1080px;
+  }
+  @media (min-width: $screen-xl) {
+    max-width: 800px;
+  }
+  @media (min-width: $screen-lg) {
+    display: block;
+    max-width: 620px;
+  }
+}

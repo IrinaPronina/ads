@@ -1,0 +1,37 @@
+// В этом файле должны быть стили для БЭМ-блока about-solutions, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.about-solutions {
+
+  $block-name: &; // #{$block-name}__element
+  padding: 52px 0 52px;
+
+
+  background-color: $white;
+
+
+
+  @media (min-width: $screen-xl) {
+    background-image: url("../img/blum.svg");
+    background-repeat: no-repeat;
+    background-color: $white;
+    background-position: top 80px right;
+    background-size: 1074px;
+  }
+
+
+
+  @media (min-width: $screen-sm) {
+    padding: 80px 0 80px;
+  }
+
+
+  .partners {
+    margin-bottom: 52px;
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 62px;
+    }
+  }
+}

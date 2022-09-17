@@ -1,12 +1,12 @@
-//- Все примеси в этом файле должны начинаться c имени блока (partners-slider-slider)
+//- Все примеси в этом файле должны начинаться c имени блока (partners)
 
-mixin partners-slider(text, mods)
+mixin partners(text, mods)
 
   //- Принимает:
   //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +partners-slider-slider('Текст', 'some-mod')
+        +partners('Текст', 'some-mod')
 
   -
     // список модификаторов
@@ -14,49 +14,49 @@ mixin partners-slider(text, mods)
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' partners-slider--' + modsList[i].trim();
+        allMods = allMods + ' partners--' + modsList[i].trim();
       }
     }
 
-  section.partners-slider(class=allMods)&attributes(attributes)
-    .partners-slider__inner.container
-      h2.partners-slider__title.h2 Нам доверяют
-      .partners-slider__swiper.swiper
+  .partners(class=allMods)&attributes(attributes)
+    .partners__inner.container
+      .partners__swiper.swiper
         .swiper-wrapper
-          .partners-slider__slide.swiper-slide
-            .partners-slider__logo
-              img(src="img/partner-1.png" alt="Клиент" loading="lazy").partners-slider__img
-          .partners-slider__slide.swiper-slide
-            .partners-slider__logo 
-              img(src="img/partner-2.png" alt="Клиент" loading="lazy").partners-slider__img
-          .partners-slider__slide.swiper-slide
-            .partners-slider__logo 
-              img(src="img/partner-3.png" alt="Клиент" loading="lazy").partners-slider__img
-          .partners-slider__slide.swiper-slide
-            .partners-slider__logo 
-              img(src="img/partner-4.png" alt="Клиент" loading="lazy").partners-slider__img
-          .partners-slider__slide.swiper-slide
-            .partners-slider__logo 
-              img(src="img/partner-5.png" alt="Клиент" loading="lazy").partners-slider__img
-          .partners-slider__slide.swiper-slide
-            .partners-slider__logo 
-              img(src="img/partner-1.png" alt="Клиент" loading="lazy").partners-slider__img
-          .partners-slider__slide.swiper-slide
-            .partners-slider__logo 
-              img(src="img/partner-2.png" alt="Клиент" loading="lazy").partners-slider__img
-          .partners-slider__slide.swiper-slide
-            .partners-slider__logo 
-              img(src="img/partner-3.png" alt="Клиент" loading="lazy").partners-slider__img
-          .partners-slider__slide.swiper-slide
-            .partners-slider__logo 
-              img(src="img/partner-4.png" alt="Клиент" loading="lazy").partners-slider__img
+          .partners__slide.swiper-slide
+            .partners__logo
+              img(src="img/partner-1.png" alt="Клиент" loading="lazy").partners__img
+          .partners__slide.swiper-slide
+            .partners__logo 
+              img(src="img/partner-2.png" alt="Клиент" loading="lazy").partners__img
+          .partners__slide.swiper-slide
+            .partners__logo 
+              img(src="img/partner-3.png" alt="Клиент" loading="lazy").partners__img
+          .partners__slide.swiper-slide
+            .partners__logo 
+              img(src="img/partner-4.png" alt="Клиент" loading="lazy").partners__img
+          .partners__slide.swiper-slide
+            .partners__logo 
+              img(src="img/partner-5.png" alt="Клиент" loading="lazy").partners__img
+          .partners__slide.swiper-slide
+            .partners__logo 
+              img(src="img/partner-1.png" alt="Клиент" loading="lazy").partners__img
+          .partners__slide.swiper-slide
+            .partners__logo 
+              img(src="img/partner-2.png" alt="Клиент" loading="lazy").partners__img
+          .partners__slide.swiper-slide
+            .partners__logo 
+              img(src="img/partner-3.png" alt="Клиент" loading="lazy").partners__img
+          .partners__slide.swiper-slide
+            .partners__logo 
+              img(src="img/partner-4.png" alt="Клиент" loading="lazy").partners__img
 
-        .partners-slider__prev
+        .partners__prev
           svg(width='29' height='24' viewBox='0 0 29 24' fill='none' xmlns='http://www.w3.org/2000/svg')
             path(d='M14.4104 2.71672C14.9964 2.1311 14.9967 1.18135 14.411 0.595402C13.8254 0.00944948 12.8757 0.0091809 12.2897 0.594802L14.4104 2.71672ZM3 12L1.93964 10.939L0.87808 12L1.93964 13.0609L3 12ZM12.2897 23.4052C12.8757 23.9908 13.8254 23.9905 14.411 23.4046C14.9967 22.8186 14.9964 21.8689 14.4104 21.2832L12.2897 23.4052ZM12.2897 0.594802L1.93964 10.939L4.06036 13.0609L14.4104 2.71672L12.2897 0.594802ZM1.93964 13.0609L12.2897 23.4052L14.4104 21.2832L4.06036 10.939L1.93964 13.0609Z' fill='black')
             path(d='M3.25195 10.5C2.42353 10.5 1.75195 11.1716 1.75195 12C1.75195 12.8284 2.42353 13.5 3.25195 13.5V10.5ZM27.0004 13.5C27.8288 13.5 28.5004 12.8284 28.5004 12C28.5004 11.1716 27.8288 10.5 27.0004 10.5V13.5ZM3.25195 13.5H27.0004V10.5H3.25195V13.5Z' fill='black')
-        .partners-slider__next
+        .partners__next
           svg(width='29' height='24' viewBox='0 0 29 24' fill='none' xmlns='http://www.w3.org/2000/svg')
             path(d='M14.5896 2.71672C14.0036 2.1311 14.0033 1.18135 14.589 0.595402C15.1746 0.00944948 16.1243 0.0091809 16.7103 0.594802L14.5896 2.71672ZM26 12L27.0604 10.939L28.1219 12L27.0604 13.0609L26 12ZM16.7103 23.4052C16.1243 23.9908 15.1746 23.9905 14.589 23.4046C14.0033 22.8186 14.0036 21.8689 14.5896 21.2832L16.7103 23.4052ZM16.7103 0.594802L27.0604 10.939L24.9396 13.0609L14.5896 2.71672L16.7103 0.594802ZM27.0604 13.0609L16.7103 23.4052L14.5896 21.2832L24.9396 10.939L27.0604 13.0609Z' fill='black')
             path(d='M25.75 10.5C26.5784 10.5 27.25 11.1716 27.25 12C27.25 12.8284 26.5784 13.5 25.75 13.5V10.5ZM2.00159 13.5C1.17316 13.5 0.501585 12.8284 0.501585 12C0.501585 11.1716 1.17316 10.5 2.00159 10.5V13.5ZM25.75 13.5H2.00159V10.5H25.75V13.5Z' fill='black')
+
 

@@ -1,0 +1,29 @@
+//- Все примеси в этом файле должны начинаться c имени блока (text-block)
+
+mixin text-block(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +text-block('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' text-block--' + modsList[i].trim();
+      }
+    }
+
+  .text-block(class=allMods)&attributes(attributes)
+    .text-block__inner.container
+      p.text-block__text.text Команда профессионалов высокой квалификации проводит обследование, консалтинг, выбор оптимальных параметров проектного решения, реализацию, внедрение, сопровождение и&nbsp;поддержку.
+      p.text-block__text.text-bold Сбор данных по потреблению энергоресурсов
+      p.text-block__text.text-bold Коммерческий учет
+      p.text-block__text.text-bold Диспетчеризация и технический учет
+      p.text-block__text.text-bold Управление жизненным циклов средств измерения и приборов учета
+      p.text-block__text.text Наши Заказчики&nbsp;&mdash; основные предприятия реального сектора экономики: энергетики, нефтегазодобычи, промышленного производства. Наши продукты помогают им&nbsp;контролировать критическую инфраструктуру, обеспечивают аналитику для принятия управленческих решений, оптимизируют сложные технологические процессы.
+      block

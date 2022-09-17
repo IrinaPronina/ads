@@ -1,0 +1,41 @@
+//- Все примеси в этом файле должны начинаться c имени блока (inner-wrapper)
+
+mixin inner-wrapper(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +inner-wrapper('some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' inner-wrapper--' + modsList[i].trim();
+      }
+    }
+
+  section.inner-wrapper(class=allMods)&attributes(attributes).bottom--angled
+    block
+
+mixin inner-wrapper-top(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +inner-wrapper__top('some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' inner-wrapper__top--' + modsList[i].trim();
+      }
+    }
+  
+  .inner-wrapper__top(class=allMods)&attributes(attributes)
+    block

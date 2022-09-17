@@ -10,9 +10,21 @@ block meta
 
 
 block content
-  h1 Error 404
-  p Page not found.
-
+  +inner-wrapper()
+    +inner-wrapper-top(style="background-image: url(img/bgrd_error.jpg);")
+      +breadcrumbs()
+        +breadcrumbs-item('Главная', '/')
+        +breadcrumbs-item('404')
+      +main-title('404')
+  section.error.plain-content
+    .error__inner.container 
+      .error__wrapper 
+        .error__title
+          img(src="img/404.png", alt="404")
+        .error__descr 
+          span.error__error.h3 Ошибка!
+          p.error__text.text К сожалению, запрашиваемая Вами страница не найдена...
+          a.error__btn.btn(href="javascript:void(0)") на главную
 //- block footer
 //-   p footer
 

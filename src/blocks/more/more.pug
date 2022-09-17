@@ -1,0 +1,24 @@
+//- Все примеси в этом файле должны начинаться c имени блока (more)
+
+mixin more(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +more('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' more--' + modsList[i].trim();
+      }
+    }
+
+  .more(class=allMods)&attributes(attributes)
+    .more__inner.container
+      .more__wrapper 
+        a(href="").more__btn.btn Запросить дополнительную информацию

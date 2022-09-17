@@ -1,0 +1,45 @@
+//- Все примеси в этом файле должны начинаться c имени блока (map)
+
+mixin map(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +map('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' map--' + modsList[i].trim();
+      }
+    }
+
+  section.map(class=allMods)&attributes(attributes)
+    .map__inner.container
+      address.map__top 
+        ul.map__list 
+          li.map__item 
+            .map__body 
+              .map__label 
+                p.text-bold Адрес
+              .map__descr
+                p.text-bold 123290, г. Москва, Бизнес&nbsp;-&nbsp;центр&nbsp;&laquo;Якорь&raquo;, Причальный проезд, д.&nbsp;2
+          li.map__item 
+            .map__body 
+              .map__label 
+                p.text-bold Телефон
+              .map__descr
+                a(href="tel:+7(495)2802595").text-bold +7 (495) 280-25-95 
+          li.map__item 
+            .map__body 
+              .map__label 
+                p.text-bold Email
+              .map__descr
+                p.text-bold info@adsolutions.ru
+      .map__block 
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A892b519ac9d82448b844832f1cda828fa882eaafc4b4987e66b810fbd8affa75&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+

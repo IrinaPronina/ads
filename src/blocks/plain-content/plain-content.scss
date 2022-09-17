@@ -1,0 +1,27 @@
+// В этом файле должны быть стили для БЭМ-блока plain-content, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.plain-content {
+
+  $block-name: &; // #{$block-name}__element
+  padding: 46px 0 30px;
+
+  @media (min-width: $screen-xxl){
+    padding: 80px 0;
+  }
+
+}
+
+.plain-content.bgrd {
+  background-size: 0;
+  padding: 46px 0 30px;
+
+  @media (min-width: $screen-xxl) {
+    padding: 160px 0;
+    margin: -80px 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+}

@@ -1,0 +1,77 @@
+extends ../pug/layout.pug
+
+block meta
+  title Отрасли
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+
+
+block content
+  +inner-wrapper()
+    +inner-wrapper-top(style="background-image: url(img/bgrd_industries.jpg);")
+      +breadcrumbs()
+        +breadcrumbs-item('Главная', '/')
+        +breadcrumbs-item('Отрасли')
+      +main-title('Отрасли')
+        +main-descr('Разработка комплексных программных продуктов на заказ, реализация решений в области цифровизации производства и снижения импортозависимости.') 
+  section.plain-content.bgrd(style="background-image: url(img/romb.svg);")
+    .plain-content__inner.container 
+      .plain-content__text 
+        p.text Advanced Digital Solutions предлагает своим заказчикам широкий спектр решений и&nbsp;услуг&nbsp;&mdash; от&nbsp;автоматизации деятельности предприятий до&nbsp;сопровождения и&nbsp;поддержки&nbsp;ИТ и&nbsp;инженерной инфраструктуры. Наши опыт и&nbsp;экспертиза помогут вам достичь целей и&nbsp;повысить эффективность бизнеса. Предлагает своим заказчикам широкий спектр решений и&nbsp;услуг&nbsp;&mdash; от&nbsp;автоматизации деятельности предприятий до&nbsp;сопровождения и&nbsp;поддержки&nbsp;ИТ и&nbsp;инженерной инфраструктуры. Наши опыт и&nbsp;экспертиза помогут вам достичь целей и&nbsp;повысить эффективность бизнеса.
+        p.text Наши опыт и&nbsp;экспертиза помогут вам достичь целей и&nbsp;повысить эффективность бизнеса. Предлагает своим заказчикам широкий спектр решений и&nbsp;услуг&nbsp;&mdash; от&nbsp;автоматизации еятельности предприятий до&nbsp;сопровождения и&nbsp;поддержки&nbsp;ИТ и&nbsp;инженерной инфраструктуры. Наши опыт и&nbsp;экспертиза помогут вам достичь целей и&nbsp;повысить эффективность бизнеса.
+  section.num-solutions.section--angled.mb-section-angled
+    .num-solutions__inner.container
+      h2.num-solutions__title.h2 Отрасли
+      .branch__block 
+        .branch__top(style="background-image: url(img/branch1.jpg);") 
+          a(href="javascript:void(0);").branch__link
+            .branch__item-body
+              h3.branch__item-title Цифровизация производства
+              ul.branch__item-bottom 
+                li.branch__item-item
+                  span.branch__item-subtitle.h5 Цифровые двойники
+                li.branch__item-item
+                  span.branch__item-subtitle.h5 Достоверность данных
+                li.branch__item-item
+                  span.branch__item-subtitle.h5 Проактивные приложения
+                li.branch__item-item
+                  span.branch__item-subtitle.h5 Распределённая командная работа и цифровой рабочий
+        ul.branch__grid 
+          .branch__item(style="background-image: url(img/branch2.jpg);")  
+            a(href="javascript:void(0);").branch__link
+              .branch__body 
+                h3.branch__title-h3 Нефть и газ
+                ul.branch__bottom 
+                  li.branch__subtitle.h5 Цифровые двойники
+                  li.branch__subtitle.h5 Цифровое бурение
+                  li.branch__subtitle.h5 Интегрированное планирование и оптимизация
+                  li.branch__subtitle.h5 Переработка и сбыт
+                  li.branch__subtitle.h5 Корпоративные сервисы
+          .branch__item(style="background-image: url(img/branch3.jpg);")  
+            a(href="javascript:void(0);").branch__link
+              .branch__body 
+                h3.branch__title-h3 Энергетика
+                ul.branch__bottom 
+                  li.branch__subtitle.h5 Генерация
+                  li.branch__subtitle.h5 Ресурсоснабжающие организации и сбыт
+                  li.branch__subtitle.h5 Корпоративные сервисы
+          .branch__item(style="background-image: url(img/branch4.png);")  
+            a(href="javascript:void(0);").branch__link
+              .branch__body 
+                h3.branch__title-h3 Промышленное производство
+                ul.branch__bottom 
+                  li.branch__subtitle.h5 Цифровые двойники
+                  li.branch__subtitle.h5 Достоверность данных
+                  li.branch__subtitle.h5 Проактивные приложения
+                  li.branch__subtitle.h5 Распределённая командная работа и цифровой рабочий
+
+
+
+//- block footer
+//-   p footer 
+
+//- block append page-bottom
+//-   script(src='js/some.js')

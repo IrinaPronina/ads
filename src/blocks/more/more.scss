@@ -1,0 +1,15 @@
+// В этом файле должны быть стили для БЭМ-блока more, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.more {
+
+  $block-name:                &;
+  
+
+  &__wrapper{
+
+  display: flex;
+  justify-content: center;
+  }
+}

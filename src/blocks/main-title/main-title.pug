@@ -1,0 +1,26 @@
+//- Все примеси в этом файле должны начинаться c имени блока (main-title)
+
+mixin main-title(title, mods)
+
+  //- Принимает:
+  //-   title    {string} - title
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +main-title('title', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' main-title--' + modsList[i].trim();
+      }
+    }
+
+  section.main-title(class=allMods)&attributes(attributes)
+    .main-title__inner.container
+      h2.main-title__text.h2=title
+      block
+
+

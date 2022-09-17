@@ -1,0 +1,38 @@
+// В этом файле должны быть стили для БЭМ-блока main-title, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.main-title {
+  $block-name: &; // #{$block-name}__element
+
+  padding-top: 12px;
+  padding-bottom: 46px;
+  color: $white;
+
+  @media (min-width: $screen-xxl) {
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+  }
+
+  @media (min-width: $screen-xl) {}
+
+  @media (min-width: $screen-lg) {}
+
+  @media (min-width: $screen-md) {
+    padding-top: 50px;
+    padding-bottom: 152px;
+  }
+
+  @media (min-width: $screen-sm) {
+    padding-top: 30px;
+    padding-bottom: 80px;
+  }
+
+  &__text {
+    @media (min-width: $screen-xxl) {
+      margin-bottom: 24px;
+      transform: translateY(-28px);
+    }
+  }
+}

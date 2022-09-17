@@ -1,0 +1,29 @@
+extends ../pug/layout.pug
+
+block meta
+  title Планирование и оптимизация производственных процессов
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+
+
+block content
+  +inner-wrapper()
+    +inner-wrapper-top(style="background-image: url(img/slider2.jpg);")
+      +breadcrumbs()
+        +breadcrumbs-item('Главная', '/')
+        +breadcrumbs-item('Решения', '/')
+        +breadcrumbs-item('Планирование и оптимизация производственных процессов')
+      +main-title('Планирование и оптимизация производственных процессов')
+        +main-descr('Разработка комплексных программных продуктов на заказ, реализация решений в области цифровизации производства и снижения импортозависимости.') 
+  +about-solutions()
+    
+
+
+//- block footer
+//-   p footer 
+
+//- block append page-bottom
+//-   script(src='js/some.js')

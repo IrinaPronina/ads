@@ -55,23 +55,27 @@ window.addEventListener("load", () => {
 
   /*-- Partners Slider --*/
 
-  const partnersSlider = document.querySelector(".partners-slider");
+  const partnersSlider = document.querySelector(".partners");
 
   if (partnersSlider) {
     let partnersSwiper;
-    partnersSwiper = new Swiper(".partners-slider__swiper.swiper", {
-      slidesPerView: 2,
+    partnersSwiper = new Swiper(".partners__swiper.swiper", {
+      slidesPerView: 1,
       spaceBetween: 0,
       loop: true,
       // autoplay: true,
       // delay: 3500,
       speed: 1000,
       navigation: {
-        prevEl: ".partners-slider__prev",
-        nextEl: ".partners-slider__next",
+        prevEl: ".partners__prev",
+        nextEl: ".partners__next",
       },
       breakpoints: {
         // when window width is >= 640px
+        576: {
+          slidesPerView: 2,
+          spaceBetween: 0
+        },
         992: {
           slidesPerView: 3,
           spaceBetween: 0

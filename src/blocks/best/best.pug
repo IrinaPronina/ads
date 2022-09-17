@@ -1,0 +1,69 @@
+//- Все примеси в этом файле должны начинаться c имени блока (best)
+
+mixin best(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+    +best('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' best--' + modsList[i].trim();
+      }
+    }
+
+  section.best(class=allMods)&attributes(attributes)
+    .best__inner.container
+      h2.best__title.h2-inner Преимущества
+      .best__about 
+        ul.best__about-list 
+          li.best__about-item 
+            .best__about-body
+              .best__about-pic 
+                img(src="img/logo-sq.svg" alt="Логотип").best__about-img
+              .best__about-content
+                .best__about-title
+                  h3.best__about-h3.h5 Наглядная экономика проектов
+                .best__about-subtitle
+                  p.best__about-text.text Автоматизация расчета экономической эффективности
+          li.best__about-item 
+            .best__about-body
+              .best__about-pic 
+                img(src="img/logo-sq.svg" alt="Логотип").best__about-img
+              .best__about-content
+                .best__about-title
+                  h3.best__about-h3.h5 Единое пространство
+                .best__about-subtitle
+                  p.best__about-text.text Единое пространство для совместной работы подразделений
+          li.best__about-item 
+            .best__about-body
+              .best__about-pic 
+                img(src="img/logo-sq.svg" alt="Логотип").best__about-img
+              .best__about-content
+                .best__about-title
+                  h3.best__about-h3.h5 Эффективное управление данными
+                .best__about-subtitle
+                  p.best__about-text.text Контроль полноты исходных данных
+          li.best__about-item 
+            .best__about-body
+              .best__about-pic 
+                img(src="img/logo-sq.svg" alt="Логотип").best__about-img
+              .best__about-content
+                .best__about-title
+                  h3.best__about-h3.h5 Повышение эффективности
+                .best__about-subtitle
+                  p.best__about-text.text Сокращение трудозатрат на ведение реестра
+      .best__screen 
+        ul.best__screen-list 
+          li.best__screen-item 
+            img(src="img/screen1.jpg", alt="Статистика")
+          li.best__screen-item 
+            img(src="img/screen2.jpg", alt="Статистика")
+          li.best__screen-item 
+            img(src="img/screen3.jpg", alt="Статистика")
