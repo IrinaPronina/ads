@@ -26,6 +26,7 @@
     @media (min-width: $screen-lg) {
       padding: 24px 0 12px;
     }
+
     @media (min-width: $screen-sm) {
       padding: 16px 0 16px;
     }
@@ -121,13 +122,152 @@
 
   &__magnify {
     display: flex;
-
+    position: relative;
   }
 
   &__search {
     width: 22px;
     height: 22px;
     padding: 0;
+    transition: all $transition-time;
+
+    &.active {
+
+      z-index: 2000;
+
+      .page-header__search-btn path {
+        stroke: $white;
+      }
+    }
+  }
+
+  .search-block {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(1, 73, 69, .48);
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    transition: all $transition-time;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+
+    &__inner {
+      padding-top: 52px;
+      padding-right: 16px;
+      display: flex;
+      justify-content: flex-end;
+
+      @media (min-width: $screen-xxl) {
+        padding-top: 80px;
+        padding-right: 86px;
+      }
+
+      @media (min-width: $screen-xl) {
+        padding-top: 52px;
+        padding-right: 36px;
+      }
+
+      @media (min-width: $screen-lg) {
+        padding-right: 214px;
+      }
+      @media (min-width: $screen-md) {
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      border-radius: 8px;
+      filter: drop-shadow(0px 8px 32px rgba(0, 0, 0, 0.24));
+      background-color: $main-light;
+      width: 100%;
+      height: auto;
+      padding: 24px;
+      z-index: 8;
+      transform: translateY(10%);
+      transition: all $transition-time;
+
+      @media (min-width: $screen-lg) {
+        width: 447px;
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        background-color: $main-light;
+        top: -8px;
+        right: 42px;
+        width: 16px;
+        height: 16px;
+        z-index: -1;
+        opacity: 0;
+        transform: rotate(45deg);
+
+        @media (min-width: $screen-lg) {
+          opacity: 1;
+        }
+      }
+    }
+
+    &__label {
+      font: 16px/1.3 $ff-i-sb;
+      font-weight: 600;
+      color: $black;
+      width: 100%;
+      margin-bottom: 16px;
+    }
+
+    &__input {
+      position: relative;
+      width: 100%;
+      background: #0BB578;
+      border-radius: 4px;
+      border: none;
+      padding: 16px;
+      padding-right: 36px;
+      font: 14px/1.3 $ff-i-r;
+      letter-spacing: 0.05em;
+      color: $white;
+
+      &:focus {
+        outline: 1px solid $white;
+
+        .search-block__btn path {
+          stroke: $main-light;
+        }
+      }
+
+      &::placeholder {
+        font: 14px/1.3 $ff-i-r;
+        letter-spacing: 0.05em;
+        color: $white;
+        opacity: 0.5;
+      }
+    }
+
+    &__btn {
+      position: absolute;
+      width: 17px;
+      height: 16px;
+      right: 40px;
+      bottom: 40px;
+
+      & path {
+        stroke: $white;
+        transition: all $transition-time;
+      }
+    }
   }
 
   &__search-close {

@@ -1,0 +1,39 @@
+// В этом файле должны быть стили для БЭМ-блока collapse, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.collapse {
+
+  $block-name:                &; // #{$block-name}__element
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__btn{
+    color: $white;
+    position: relative;
+
+    &::before{
+      position: absolute;
+      content: '';
+      background: url(../img/arrow-down-white.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      border: 0;
+      width: 20px;
+      height: 24px;
+      top: -100%;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all $transition-time;
+    }
+  }
+
+  &:hover{
+    .collapse__btn::before{
+      top: -110%;
+    }
+  }
+}

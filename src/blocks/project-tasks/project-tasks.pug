@@ -1,0 +1,36 @@
+//- Все примеси в этом файле должны начинаться c имени блока (project-tasks)
+
+mixin project-tasks(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +project-tasks('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' project-tasks--' + modsList[i].trim();
+      }
+    }
+
+  .project-tasks(class=allMods)&attributes(attributes)
+    .project-tasks__inner.container
+      ul.project-tasks__list 
+        li.project-tasks__item 
+          a(href="javascript:void(0);").project-tasks__body 
+            .project-tasks__title
+              p.project-tasks__text.h5 Автоматизированная система управления ремонтами и техническим обслуживанием оборудования
+        li.project-tasks__item 
+          a(href="javascript:void(0);").project-tasks__body 
+            .project-tasks__title
+              p.project-tasks__text.h5 Система управления ремонтами и техническим обслуживанием оборудования
+        li.project-tasks__item 
+          a(href="javascript:void(0);").project-tasks__body 
+            .project-tasks__title
+              p.project-tasks__text.h5 Управление ремонтом и техническим обслуживанием оборудования
+

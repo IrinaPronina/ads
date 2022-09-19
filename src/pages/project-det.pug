@@ -1,0 +1,29 @@
+extends ../pug/layout.pug
+
+block meta
+  title Проекты
+  meta(name='description' content='')
+
+//- block append head
+//-   link(rel='stylesheet' href='css/some.css')
+
+
+
+block content
+  +inner-wrapper()
+    +inner-wrapper-top(style="background-image: url(img/bgrd_projects.jpg);")
+      +breadcrumbs()
+        +breadcrumbs-item('Главная', '/')
+        +breadcrumbs-item('Проекты', '/')
+        +breadcrumbs-item('Бинбанк')
+      +main-title('Бинбанк')
+        +main-descr('Разработка комплексных программных продуктов на заказ, реализация решений в области цифровизации производства и снижения импортозависимости.') 
+  +project-tasks()
+  +return('назад к проектам')
+
+
+//- block footer
+//-   p footer 
+
+//- block append page-bottom
+//-   script(src='js/some.js')

@@ -1,0 +1,52 @@
+extends ../pug/layout.pug
+
+block meta
+  title Проекты
+  meta(name='description' content='')
+
+//- block append head
+//-   link(rel='stylesheet' href='css/some.css')
+
+
+
+block content
+  +inner-wrapper()
+    +inner-wrapper-top(style="background-image: url(img/bgrd_projects.jpg);")
+      +breadcrumbs()
+        +breadcrumbs-item('Главная', '/')
+        +breadcrumbs-item('Проекты')
+      +main-title('Проекты')
+        +main-descr('Разработка комплексных программных продуктов на заказ, реализация решений в области цифровизации производства и снижения импортозависимости.') 
+  section.project-search 
+    .project-search__inner.container
+      .project-search__top 
+        .project-search__selects 
+          select(data-trigger name="search-ind").js-choice 
+            option(value="" selected) Отрасль
+            option(value="Отрасль1") Отрасль1
+            option(value="Отрасль2") Отрасль2
+            option(value="Отрасль3") Отрасль3
+        .project-search__selects 
+          select(data-trigger name="search-alph").js-choice 
+            option(value="" selected) Поиск по алфавиту
+            option(value="Значение1") Значение1
+            option(value="Значение2") Значение2
+            option(value="Значение3") Значение3
+        .project-search__submit
+          .project-search__other
+            select(data-trigger name="search-projects").js-choice 
+              option(value="" selected) Поиск по проектам
+              option(value="Значение1") Значение1
+              option(value="Значение2") Значение2
+              option(value="Значение3") Значение3
+          .project-search__search
+            button.project-search__btn.btn поиск
+  +project-grid()
+  +more('показать больше')
+
+
+//- block footer
+//-   p footer 
+
+//- block append page-bottom
+//-   script(src='js/some.js')

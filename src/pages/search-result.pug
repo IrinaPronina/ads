@@ -1,0 +1,30 @@
+extends ../pug/layout.pug
+
+block meta
+  title Энергоучёт и энергоэффективность
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+
+
+block content
+  +inner-wrapper()
+    +inner-wrapper-top(style="background-image: url(img/bgrd_solutions.jpg);")
+      +breadcrumbs()
+        +breadcrumbs-item('Главная', '/')
+        +breadcrumbs-item('Решения', '/')
+        +breadcrumbs-item('Энергоучёт и энергоэффективность')
+      +main-title('Энергоучёт и энергоэффективность')
+        +main-descr('Разработка комплексных программных продуктов на заказ, реализация решений в области цифровизации производства и снижения импортозависимости.') 
+  +about-solutions()
+  +accordeon()
+    
+
+
+//- block footer
+//-   p footer 
+
+//- block append page-bottom
+//-   script(src='js/some.js')

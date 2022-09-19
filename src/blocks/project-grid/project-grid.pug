@@ -1,0 +1,105 @@
+//- Все примеси в этом файле должны начинаться c имени блока (project-grid)
+
+mixin project-grid(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +project-grid('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' project-grid--' + modsList[i].trim();
+      }
+    }
+
+  section.project-grid(class=allMods)&attributes(attributes)
+    .project-grid__inner.container
+      ul.project-grid__list   
+        li.project-grid__item 
+          .project-grid__body 
+            .project-grid__pic 
+              img(src="img/partner-6.png" alt="Логотип").project-grid__img
+            .project-grid__content
+              .project-grid__title
+                p.project-grid__text Роботизированная загрузка прайс-листа АО «НМЖК»
+              .project-grid__subtitle
+                span.project-grid__num 1 проект
+        li.project-grid__item 
+          .project-grid__body 
+            .project-grid__pic 
+              img(src="img/partner-7.png" alt="Логотип").project-grid__img
+            .project-grid__content
+              .project-grid__title
+                p.project-grid__text Автоматизация процесса управления сетью терминальных устройств самообслуживания и POS-терминалов
+              .project-grid__subtitle
+                span.project-grid__num 3 проекта
+        li.project-grid__item 
+          .project-grid__body 
+            .project-grid__pic 
+              img(src="img/partner-2.png" alt="Логотип").project-grid__img
+            .project-grid__content
+              .project-grid__title
+                p.project-grid__text Автоматизированная система управления ремонтами и техническим обслуживанием оборудования
+              .project-grid__subtitle
+                span.project-grid__num 1 проект
+        li.project-grid__item 
+          .project-grid__body 
+            .project-grid__pic 
+              img(src="img/partner-1.png" alt="Логотип").project-grid__img
+            .project-grid__content
+              .project-grid__title
+                p.project-grid__text Автоматизированная система управления ремонтами и техническим обслуживанием оборудования
+              .project-grid__subtitle
+                span.project-grid__num 1 проект
+        li.project-grid__item 
+          .project-grid__body 
+            .project-grid__pic 
+              img(src="img/partner-4.png" alt="Логотип").project-grid__img
+            .project-grid__content
+              .project-grid__title
+                p.project-grid__text Автоматизированная система управления ремонтами и техническим обслуживанием оборудования
+              .project-grid__subtitle
+                span.project-grid__num 1 проект
+        li.project-grid__item 
+          .project-grid__body 
+            .project-grid__pic 
+              img(src="img/partner-3.png" alt="Логотип").project-grid__img
+            .project-grid__content
+              .project-grid__title
+                p.project-grid__text Автоматизированная система управления ремонтами и техническим обслуживанием оборудования
+              .project-grid__subtitle
+                span.project-grid__num 1 проект
+        li.project-grid__item 
+          .project-grid__body 
+            .project-grid__pic 
+              img(src="img/partner-8.png" alt="Логотип").project-grid__img
+            .project-grid__content
+              .project-grid__title
+                p.project-grid__text Портал Морской порт
+              .project-grid__subtitle
+                span.project-grid__num 1 проект
+        li.project-grid__item 
+          .project-grid__body 
+            .project-grid__pic 
+              img(src="img/partner-9.png" alt="Логотип").project-grid__img
+            .project-grid__content
+              .project-grid__title
+                p.project-grid__text Автоматизированная система управления ремонтами и техническим обслуживанием оборудования
+              .project-grid__subtitle
+                span.project-grid__num 1 проект
+        li.project-grid__item 
+          .project-grid__body 
+            .project-grid__pic 
+              img(src="img/partner-5.png" alt="Логотип").project-grid__img
+            .project-grid__content
+              .project-grid__title
+                p.project-grid__text Автоматизированная система управления ремонтами и техническим обслуживанием оборудования
+              .project-grid__subtitle
+                span.project-grid__num 3 проекта
+

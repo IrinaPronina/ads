@@ -68,13 +68,4 @@
   &.decor:after {
     bottom: -100px;
   }
-
-  &__apply {
-    .apply__item{
-      @media (max-width: ($screen-xxl - 1)){
-        flex: 0 0 50%;
-        margin-bottom: 20px;
-      }
-    }
-  }
 }

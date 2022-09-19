@@ -197,6 +197,7 @@
   &__link {
     text-decoration: none;
     color: $white;
+    transition: color $transition-time;
   }
 }
 

@@ -1,0 +1,36 @@
+// В этом файле должны быть стили для БЭМ-блока return, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.return {
+
+  $block-name: &; // #{$block-name}__element
+  margin-bottom: 48px;
+
+  @media (min-width: $screen-lg) {
+    margin-bottom: 80px;
+  }
+
+  &__link{
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font: 12px/1.2 $ff-i-b;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $main-dark;
+    transition: all $transition-time;
+
+    @media (min-width: $screen-xxl) {
+      font-size: 16px;
+    }
+  
+    @media (min-width: $screen-md) {
+      font-size: 12px;
+    }
+
+    &:hover{
+      color: $main-light;
+    }
+  }
+}

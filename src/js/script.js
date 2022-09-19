@@ -148,6 +148,68 @@ window.addEventListener("load", () => {
     })
   }
 
+  /*-- Choices --*/
+  const selectEls = document.querySelectorAll('.js-choice');
 
+  selectEls.forEach(selectEl => {
+    const choices = new Choices(selectEl, {
+      searchEnabled: false,
+      itemSelectText: '',
+      placeholder: true,
+    })
+  })
 
+  /*-- Gradient Accordeon --*/
+
+  const gradientAccordeon = document.querySelector('.accordeon');
+
+  if (gradientAccordeon) {
+
+    function GradientAccordeon() {
+      const accordeonContents = document.querySelectorAll('.accordeon__content');
+      const accordeonBtns = document.querySelectorAll('.accordeon__btn');
+
+      accordeonBtns.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+          accordeonBtns.forEach((btnItem, idx) => {
+
+            if (btnItem === btn) {
+              const accordeonelement = btn.closest('.accordeon__element');
+              const collapseBtn = accordeonelement.querySelector('.collapse__btn');
+              accordeonelement.classList.toggle('open');
+
+              collapseBtn.addEventListener('click', () => {
+                accordeonelement.classList.remove('open');
+              })
+            }
+          })
+        })
+      })
+    }
+    GradientAccordeon();
+    window.addEventListener('resize', GradientAccordeon);
+  }
+
+  /*-- Search --*/
+
+  const searchBtn = document.querySelector('.search-btn');
+
+  if (searchBtn) {
+    searchBtn.addEventListener('click', () => {
+      const searchBlock = document.querySelector('.search-block');
+      searchBlock.classList.toggle('active');
+      searchBtn.classList.toggle('active');
+    })
+
+    const searchInput = document.querySelector('.search-block input')  
+
+    searchInput.addEventListener('focus', function() {
+      const searchIcon = document.querySelector('.search-block__btn');
+      const searchPaths = document.querySelectorAll('.search-block__btn path');
+
+      searchPaths.forEach(searchPath => {
+        searchPath.style.stroke = '#00E68A';
+      })
+    })
+  }
 });

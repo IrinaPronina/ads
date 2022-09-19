@@ -1,0 +1,65 @@
+// В этом файле должны быть стили для БЭМ-блока project-search, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.project-search {
+
+  $block-name: &; // #{$block-name}__element
+padding-top: 48px;
+  margin-bottom: 40px;
+
+  @media (min-width: $screen-lg) {
+    margin-bottom: 64px;  padding-top: 80px;
+  }
+
+  &__top {
+
+    @media (min-width: $screen-lg) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__selects {
+    margin-bottom: 16px;
+
+    @media (min-width: $screen-lg) {
+      flex: 0 0 31.5%;
+      margin-bottom: 0;
+    }
+
+  }
+
+  &__submit {
+
+    @media (min-width: $screen-xl) {
+      flex: 0 0 31.5%;
+    }
+
+    @media (min-width: $screen-lg) {
+      display: flex;
+      justify-content: space-between;
+      flex: 0 0 35%;
+    }
+  }
+
+  &__other {
+    margin-bottom: 16px;
+
+    @media (min-width: $screen-lg) {
+      flex: 0 0 68%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__search {
+    @media (min-width: $screen-lg) {
+      width: 120px;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+  }
+}
