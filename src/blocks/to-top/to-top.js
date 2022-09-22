@@ -28,14 +28,14 @@ ready(function(){
 
   }
 
-  function visibilityToggle() {
-    if(window.pageYOffset >= 500) {
-      document.getElementById('to-top').classList.add('to-top--visible');
-    }
-    else {
-      document.getElementById('to-top').classList.remove('to-top--visible');
-    }
-  }
+  // function visibilityToggle() {
+  //   if(window.pageYOffset <= 768) {
+  //     document.getElementById('to-top').classList.add('to-top--visible');
+  //   }
+  //   else {
+  //     document.getElementById('to-top').classList.remove('to-top--visible');
+  //   }
+  // }
 
   function animate(_ref) {
     var timing = _ref.timing,

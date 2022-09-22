@@ -11,22 +11,25 @@
 
   @media (min-width: $screen-xxl) {
     min-height: 680px;
+
+  }
+
+  @media (min-width: $screen-xl) {
+
     display: flex;
     align-items: center;
   }
 
-  @media (min-width: $screen-xl) {}
-
-  @media (min-width: $screen-lg) {}
-
-  @media (min-width: $screen-md) {
-    padding-top: 50px;
-    padding-bottom: 152px;
+  @media (min-width: $screen-lg) {
+    min-height: 488px;
   }
 
+  @media (min-width: $screen-md) {}
+
   @media (min-width: $screen-sm) {
-    padding-top: 30px;
-    padding-bottom: 80px;
+    min-height: 252px;
+    display: flex;
+    align-items: center;
   }
 
   &__text {

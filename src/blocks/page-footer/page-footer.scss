@@ -9,6 +9,7 @@
   background-color: $main-dark;
   padding: 58px 0 56px;
 
+
   @media (min-width: $screen-xxl) {
     padding: 120px 0 56px;
   }
@@ -19,6 +20,7 @@
 
 
   &__body {
+    position: relative;
 
     @media (min-width: $screen-lg) {
       display: flex;
@@ -133,6 +135,7 @@
     font-weight: 500;
     margin-bottom: 10px;
     letter-spacing: 0.05em;
+    transition: color $transition-time;
 
     @media (min-width: $screen-xxl) {
       font-size: 22px;
@@ -146,6 +149,10 @@
     @media (min-width: $screen-lg) {
       font-size: 16px;
       margin-bottom: 24px;
+    }
+
+    &:hover{
+      color: $main-light;
     }
   }
 
@@ -198,6 +205,10 @@
     text-decoration: none;
     color: $white;
     transition: color $transition-time;
+
+    &:hover{
+      color: $main-light;
+    }
   }
 }
 
@@ -341,6 +352,11 @@
       color: $color-accent;
       text-decoration: none;
       font-weight: 700;
+      transition: color $transition-time;
+
+      &:hover{
+        color: $main-light;
+      }
     }
 
     input:checked+span:before {

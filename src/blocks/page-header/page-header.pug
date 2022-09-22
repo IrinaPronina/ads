@@ -17,7 +17,7 @@ mixin page-header(mods)
       }
     }
 
-  header.page-header(class=allMods, role='banner')&attributes(attributes)
+  header.page-header
     .page-header__inner.container
       .page-header__top 
         .page-header__left 
@@ -78,7 +78,7 @@ mixin page-header(mods)
         .page-header__right 
           .page-header__connect 
             a(href="tel:+7(495)2802595").page-header__phone +7 (495) 280-25-95
-            a(href="javascript:void(0)").page-header__connect-btn.btn Обратный звонок
+            a(href="javascript:void(0)" data-fancybox data-src="#callback-popup").page-header__connect-btn.btn Обратный звонок
           .page-header__magnify
             button.page-header__search.search-btn.btn-reset 
               svg.page-header__search-btn(width='23' height='22' viewBox='0 0 23 22' fill='none' xmlns='http://www.w3.org/2000/svg')
@@ -94,3 +94,69 @@ mixin page-header(mods)
                     path(d='M13.9754 11.9753L19.0002 17.0001' stroke='white' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round')
           .page-header__lang 
             a(href="javascript:void(0)").page-header__lang-btn ENG
+            
+      #callback-popup(style="display:none;max-width:440spx;").popup.callback-popup
+        .callback-popup__title.h4 Обратный звонок
+        .callback-popup__text
+          p.text Оставьте свои контакты, и мы перезвоним Вам в ближайшее время.
+        form(action="").callback-popup__form
+          .callback-popup__content
+            input.callback-popup__input(type="text" name="name")
+            label(for='name').callback-popup__label Имя Фамилия #[span *] 
+          .callback-popup__content
+            input.callback-popup__input(type="text" name="name")
+            label(for='name').callback-popup__label Компания #[span *] 
+          .callback-popup__content
+            input.callback-popup__input(type="text" name="name")
+            label(for='name').callback-popup__label Должность #[span *] 
+          .callback-popup__content
+            input.callback-popup__input(type="text" name="name")
+            label(for='name').callback-popup__label Телефон #[span *] 
+          .callback-popup__content
+            input.callback-popup__input(type="text" name="name")
+            label(for='name').callback-popup__label E-mail #[span *] 
+          .callback-popup__content
+            textarea.callback-popup__input(name="name", cols="30", rows="2")
+            label(for='name').callback-popup__label Ваше сообщение
+          .callback-popup__agree
+            label.footer-form__label.custom-checkbox--white
+              input(type="checkbox" name="name" required="required").footer-form__checkbox
+              span
+              p Ознакомлен с #[a(href="javascript:void()")  политикой в области обработки персональных данных] и даю согласие на их обработку
+          button(type="submit" data-id="#thanks-popup").popup-submit.footer-form__submit.btn Отправить
+
+
+      #more-popup(style="display:none;max-width:440spx;").popup.more-popup
+        .more-popup__title.h4 Обратный звонок
+        .more-popup__text
+          p.text Оставьте свои контакты, и мы перезвоним Вам в ближайшее время.
+        form(action="").more-popup__form
+          .more-popup__content
+            input.more-popup__input(type="text" name="name")
+            label(for='name').more-popup__label Имя Фамилия #[span *] 
+          .more-popup__content
+            input.more-popup__input(type="text" name="name")
+            label(for='name').more-popup__label Компания #[span *] 
+          .more-popup__content
+            input.more-popup__input(type="text" name="name")
+            label(for='name').more-popup__label Должность #[span *] 
+          .more-popup__content
+            input.more-popup__input(type="text" name="name")
+            label(for='name').more-popup__label Телефон #[span *] 
+          .more-popup__content
+            input.more-popup__input(type="text" name="name")
+            label(for='name').more-popup__label E-mail #[span *] 
+          .more-popup__content
+            textarea.more-popup__input(name="name", cols="30", rows="2")
+            label(for='name').more-popup__label Ваше сообщение
+          .more-popup__agree
+            label.footer-form__label.custom-checkbox--white
+              input(type="checkbox" name="name" required="required").footer-form__checkbox
+              span
+              p Ознакомлен с #[a(href="javascript:void()")  политикой в области обработки персональных данных] и даю согласие на их обработку
+          button(type="submit" data-id="#thanks-popup").popup-submit.footer-form__submit.btn Отправить
+
+      //- #thanks-popup.popup.thanks-popup
+      //-   .thanks-popup__inner
+      //-     .thanks-popup__title.h4 Спасибо за обращение! Мы свяжемся с Вами в ближайшее время.
+

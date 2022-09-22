@@ -28,6 +28,7 @@ Swiper.use([Navigation, Pagination, EffectFade]);
 
 window.addEventListener("load", () => {
 
+
   const mobile = window.matchMedia('(max-width:1200px)');
 
   /*-- Top Slider --*/
@@ -40,10 +41,12 @@ window.addEventListener("load", () => {
     topSliderSwiper = new Swiper(".top-slider.swiper", {
       slidesPerView: 1,
       spaceBetween: 0,
+      loop: true,
       effect: "fade",
       speed: 1500,
       pagination: {
         el: '.top-slider__pagination',
+      clickable: true,
       },
       navigation: {
         nextEl: '.top-slider__next',
@@ -187,7 +190,7 @@ window.addEventListener("load", () => {
       })
     }
     GradientAccordeon();
-    window.addEventListener('resize', GradientAccordeon);
+    // window.addEventListener('resize', GradientAccordeon);
   }
 
   /*-- Search --*/
@@ -199,11 +202,12 @@ window.addEventListener("load", () => {
       const searchBlock = document.querySelector('.search-block');
       searchBlock.classList.toggle('active');
       searchBtn.classList.toggle('active');
+      document.body.classList.toggle('lock');
     })
 
-    const searchInput = document.querySelector('.search-block input')  
+    const searchInput = document.querySelector('.search-block input')
 
-    searchInput.addEventListener('focus', function() {
+    searchInput.addEventListener('focus', function () {
       const searchIcon = document.querySelector('.search-block__btn');
       const searchPaths = document.querySelectorAll('.search-block__btn path');
 
@@ -212,4 +216,38 @@ window.addEventListener("load", () => {
       })
     })
   }
+  /*-- Thanks popup --*/
+
+  // const body = document.querySelector('body');
+  // const popupBtn = document.querySelector('.popup-submit');
+
+  // let unlock = true;
+
+  // const timeout = 400;
+
+  // popupBtn.addEventListener('click', function (e) {
+  //   const popupName = popupBtn.getAttribute('data-id').replace('#', '');
+  //   const currentPopup = document.getElementById(popupName);
+  //   popupOpen(currentPopup);
+  //   console.log(currentPopup);
+  // })
+
+  // function popupOpen(currentPopup) {
+  //   if (currentPopup && unlock) {
+  //     const popupActive = document.querySelector('.popup.open');
+  //     if (popupActive) {
+  //       popupClose(popupActive, false);
+  //     } else {
+  //       bodyLock();
+  //     }
+  //     currentPopup.classList.add('open');
+  //     body.style.overflow = 'hidden';
+  //     currentPopup.addEventListener('click', function (e) {
+  //       if (!e.target.closest('.popup')) {
+  //         popupClose(e.target.closest('.popup'));
+  //       }
+  //     })
+  //   }
+  // }
+
 });

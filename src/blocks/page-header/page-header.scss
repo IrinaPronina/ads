@@ -34,7 +34,7 @@
   }
 
   &__left {
-    width: 83%;
+    width: 152px;
     order: 1;
 
     @media (min-width: $screen-xxl) {
@@ -52,7 +52,7 @@
 
   &__menu {
     order: 3;
-    width: 37%;
+    width: 20%;
     display: flex;
     justify-content: flex-end;
 
@@ -125,6 +125,10 @@
     position: relative;
   }
 
+  &__search-btn path{
+    transition: all $transition-time;
+  }
+
   &__search {
     width: 22px;
     height: 22px;
@@ -139,7 +143,14 @@
         stroke: $white;
       }
     }
+
+    &:hover{
+      .page-header__search-btn path{
+        stroke: $white;
+      }
+    }
   }
+
 
   .search-block {
     position: fixed;
@@ -306,7 +317,7 @@
 
   &__body {
     position: relative;
-    width: 100%;
+    width: 81%;
     overflow: auto;
 
     @media (min-width: $screen-xxl) {
@@ -366,8 +377,7 @@
       left: -24%;
       width: 24%;
       height: 100%;
-      background-color: $main-dark;
-      opacity: 0.2;
+      background: rgba(1,73,69,.48);
       transition: all $transition-time;
 
 
@@ -406,6 +416,10 @@
     cursor: pointer;
     border-bottom: 1px solid $black;
 
+    @media (min-width: $screen-xl) {
+      border-bottom: none;
+    }
+
     &:last-child {
       margin: 0;
       border-bottom: none;
@@ -428,9 +442,6 @@
       }
     }
 
-    @media (min-width: $screen-lg) {
-      border-bottom: none;
-    }
 
 
     &.has-child {
@@ -511,6 +522,7 @@
       }
 
       & .menu__sublist {
+        padding-top: 24px;
         max-height: 500px;
         opacity: 1;
       }
@@ -521,7 +533,6 @@
     display: block;
     color: $black;
     text-decoration: none;
-    margin-bottom: 24px;
     font-weight: 500;
     transition: all $transition-time;
 
@@ -595,6 +606,10 @@
 
     @media (min-width: $screen-xl) {
       background-color: $white;
+
+      &:not(:last-child){
+              border-bottom: 1px solid #E3E3E3;
+      }
     }
 
 
@@ -620,6 +635,7 @@
 
   }
 
+  
   &__sublink {
     color: $main-dark;
     text-decoration: none;
@@ -686,6 +702,7 @@
   &__text {
     font: 13px/1.2 $ff-i-r;
     font-weight: 500;
+    white-space: nowrap;
 
     @media (min-width: $screen-lg) {
       font-size: 15px;

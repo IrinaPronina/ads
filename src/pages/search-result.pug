@@ -1,7 +1,7 @@
 extends ../pug/layout.pug
 
 block meta
-  title Энергоучёт и энергоэффективность
+  title Поиск по сайту
   meta(name='description', content='')
 
 //- block append head
@@ -11,16 +11,36 @@ block meta
 
 block content
   +inner-wrapper()
-    +inner-wrapper-top(style="background-image: url(img/bgrd_solutions.jpg);")
+    +inner-wrapper-top(style="background-image: url(img/bgrd_search.jpg);")
       +breadcrumbs()
         +breadcrumbs-item('Главная', '/')
-        +breadcrumbs-item('Решения', '/')
-        +breadcrumbs-item('Энергоучёт и энергоэффективность')
-      +main-title('Энергоучёт и энергоэффективность')
-        +main-descr('Разработка комплексных программных продуктов на заказ, реализация решений в области цифровизации производства и снижения импортозависимости.') 
-  +about-solutions()
-  +accordeon()
-    
+        +breadcrumbs-item('Поиск по сайту')
+      +main-title('Поиск по сайту')
+  +search-input()
+  section.search-result
+    .search-result__inner.container
+      p.search-result__top.h3 Результаты поиска по запросу:#[span «Нефть и газ»] 
+      ul.search-result__list
+        li.search-result__item
+          span.search-result__title.h5 1. Нефть и газ
+          .search-result__p-block
+            p.search-result__text.text Команда профессионалов высокой квалификации проводит обследование, консалтинг, выбор оптимальных параметров проектного решения, реализацию, внедрение, сопровождение и&nbsp;поддержку.
+            p.search-result__text.text Мы&nbsp;предлагаем набор планов и&nbsp;возможностей, инноваций и&nbsp;связанных с&nbsp;ними технологических решений, которые помогают компаниям и&nbsp;промышленным предприятиям перейти на&nbsp;новые уровни автоматизации и&nbsp;цифровизации.
+          .search-result__date.info Раздел: #[a(href="javascript:void(0);")  Отрасли]
+        li.search-result__item
+          span.search-result__title.h5 2. Нефть и газ
+          .search-result__p-block
+            p.search-result__text.text Команда профессионалов высокой квалификации проводит обследование, консалтинг, выбор оптимальных параметров проектного решения, реализацию, внедрение, сопровождение и&nbsp;поддержку.
+            p.search-result__text.text Мы&nbsp;предлагаем набор планов и&nbsp;возможностей, инноваций и&nbsp;связанных с&nbsp;ними технологических решений, которые помогают компаниям и&nbsp;промышленным предприятиям перейти на&nbsp;новые уровни автоматизации и&nbsp;цифровизации.
+          .search-result__date.info Раздел: #[a(href="javascript:void(0);")  Отрасли]
+        li.search-result__item
+          span.search-result__title.h5 3. Нефть и газ
+          .search-result__p-block
+            p.search-result__text.text Команда профессионалов высокой квалификации проводит обследование, консалтинг, выбор оптимальных параметров проектного решения, реализацию, внедрение, сопровождение и&nbsp;поддержку.
+            p.search-result__text.text Мы&nbsp;предлагаем набор планов и&nbsp;возможностей, инноваций и&nbsp;связанных с&nbsp;ними технологических решений, которые помогают компаниям и&nbsp;промышленным предприятиям перейти на&nbsp;новые уровни автоматизации и&nbsp;цифровизации.
+          .search-result__date.info Раздел: #[a(href="javascript:void(0);")  Отрасли]
+
+
 
 
 //- block footer

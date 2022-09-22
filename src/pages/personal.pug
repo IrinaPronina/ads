@@ -1,0 +1,70 @@
+extends ../pug/layout.pug
+
+block meta
+  title Согласие на обработку персональных данных
+  meta(name='description' content='')
+
+//- block append head
+//-   link(rel='stylesheet' href='css/some.css')
+
+
+
+block content
+  +inner-wrapper()
+    +inner-wrapper-top(style="background-image: url(img/bgrd_personal.jpg);")
+      +breadcrumbs()
+        +breadcrumbs-item('Главная', '/')
+        +breadcrumbs-item('Согласие на обработку персональных данных')
+      +main-title('Согласие на обработку персональных данных')
+  section.text-block.mt-80
+    .text-block__inner.container
+      p.text-block__text.text Предоставляя свои персональные данные Пользователь даёт согласие на&nbsp;обработку, хранение и&nbsp;использование своих персональных данных на&nbsp;основании ФЗ &#8470;&nbsp;152-ФЗ &laquo;О&nbsp;персональных данных&raquo; от&nbsp;27.07.2006&nbsp;г.&nbsp;в&nbsp;следующих целях:
+      ul.task__list
+        li.task__item
+          p.text Осуществление клиентской поддержки;
+        li.task__item
+          p.text Получения Пользователем информации о маркетинговых событиях;
+        li.task__item
+          p.text Проведения аудита и прочих внутренних исследований с целью повышения качества предоставляемых услуг;
+      p.text-block__text.text-bold Под персональными данными подразумевается любая информация личного характера, позволяющая установить личность Пользователя/Покупателя такая как:
+      ul.task__list
+        li.task__item
+          p.text Фамилия, Имя, Отчество;
+        li.task__item
+          p.text Дата рождения;
+        li.task__item
+          p.text Контактный телефон;
+        li.task__item
+          p.text Адрес электронной почты;
+        li.task__item
+          p.text Почтовый адрес;
+      p.text-block__text.text Персональные данные Пользователей хранятся исключительно на&nbsp;электронных носителях и&nbsp;обрабатываются с&nbsp;использованием автоматизированных систем, за&nbsp;исключением случаев, когда неавтоматизированная обработка персональных данных необходима в&nbsp;связи с&nbsp;исполнением требований законодательства.
+      p.text-block__text.text-bold Компания обязуется не&nbsp;передавать полученные персональные данные третьим лицам, за&nbsp;исключением следующих случаев:
+      ul.task__list
+        li.task__item   
+          p.text По запросам уполномоченных органов государственной власти РФ только по основаниям и в порядке, установленным законодательством РФ
+        li.task__item   
+          p.text Стратегическим партнерам, которые работают с Компанией для предоставления продуктов и услуг, или тем из них, которые помогают Компании реализовывать продукты и услуги потребителям. Мы предоставляем третьим лицам минимальный объем персональных данных, необходимый только для оказания требуемой услуги или проведения необходимой транзакции.
+      p.text-block__text.text Компания оставляет за собой право вносить изменения в одностороннем порядке в настоящие правила, при условии, что изменения не противоречат действующему законодательству РФ. Изменения условий настоящих правил вступают в силу после их публикации на Сайте.
+      ul.download.mb-64
+        li.download__item 
+          .download__body
+            .download__pic 
+              svg(width='32' height='34' viewBox='0 0 32 34' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(d='M28.3346 33H4.33333C3.97971 33 3.64057 32.8595 3.39052 32.6095C3.14048 32.3594 3 32.0203 3 31.6667V2.33333C3 1.97971 3.14048 1.64057 3.39052 1.39052C3.64057 1.14048 3.97971 1 4.33333 1H20.3346L29.668 10.3333V31.6667C29.668 31.8418 29.6335 32.0151 29.5665 32.1769C29.4995 32.3387 29.4013 32.4857 29.2774 32.6095C29.1536 32.7333 29.0066 32.8315 28.8449 32.8985C28.6831 32.9655 28.5097 33 28.3346 33Z' stroke='#00BFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none')
+                path(d='M20.334 1V10.3333H29.6686' stroke='#00BFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none')
+                path(d='M11.666 21.6665L16.3327 26.3332L20.9993 21.6665' stroke='#00BFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none')
+                path(d='M16.334 15.6665V26.3332' stroke='#00BFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none')
+            .download__content
+              .download__title
+                h3.download__h3.h5 Документ №1
+              .download__subtitle
+                p.download__text.text Дополнительная информация описания документа.
+              +hyperlink()
+
+
+//- block footer
+//-   p footer 
+
+//- block append page-bottom
+//-   script(src='js/some.js')

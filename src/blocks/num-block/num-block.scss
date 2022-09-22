@@ -1,0 +1,66 @@
+// В этом файле должны быть стили для БЭМ-блока num-block, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.num-block {
+
+  $block-name: &; // #{$block-name}__element
+
+  list-style: none;
+  padding: 0;
+  color: $black;
+
+  @media (min-width: $screen-xxl) {
+    margin: 0 -110px;
+  }
+
+  @media (min-width: $screen-xl) {
+    margin: 0 -40px;
+  }
+
+  @media (min-width: $screen-lg) {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 -20px;
+  }
+
+
+  &__item {
+
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      padding: 0 110px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding: 0 40px;
+    }
+
+    @media (min-width: $screen-lg) {
+      flex: 0 0 33.333%;
+      padding: 0 20px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__num {
+    white-space: nowrap;
+    margin-bottom: 8px;
+  }
+
+  &__text {
+    margin: 0;
+  }
+}
+
+.num-block--industries{
+  margin-bottom: 32px;
+  @media (min-width: $screen-lg){
+      margin-bottom: 80px;
+  }
+
+}

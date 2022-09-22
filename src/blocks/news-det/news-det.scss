@@ -1,0 +1,102 @@
+// В этом файле должны быть стили для БЭМ-блока news-det, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.news-det {
+
+  $block-name: &; // #{$block-name}__element
+
+  padding: 46px 0 30px;
+
+  @media (min-width: $screen-xxl) {
+    padding: 80px 0;
+  }
+
+  &__date {
+    font: 13px/1.5 $ff-i-r;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+
+    @media (min-width: $screen-xxl) {
+      font-size: 18px;
+    }
+
+    @media (min-width: $screen-lg) {
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+  }
+
+  h2 {
+    margin: 0;
+    font: 28px/1.2 $ff-i-sb;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 40px;
+
+    @media (min-width: $screen-xxl) {
+      font-size: 48px;
+
+    }
+
+    @media (min-width: $screen-lg) {
+      font-size: 40px;
+      margin-bottom: 64px;
+    }
+  }
+
+  p {
+    font: 13px/1.5 $ff-i-r;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+
+    @media (min-width: $screen-xxl) {
+      font-size: 18px;
+    }
+
+    @media (min-width: $screen-lg) {
+      font-size: 15px;
+    }
+  }
+
+  figure {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 0;
+    margin: 0;
+
+    @media (min-width: $screen-lg) {
+      padding: 64px 0;
+    }
+  }
+
+  figcaption {
+    font: 12px/1.5 $ff-i-r;
+    color: #838383;
+    margin-top: 8px;
+
+    @media (min-width: $screen-lg) {
+      display: block;
+      text-align: center;
+      font: 14px/1.5 $ff-i-r;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      margin-top: 16px;
+      color: #838383;
+    }
+  }
+
+  img {
+    max-width: 100%;
+
+    @media (min-width: $screen-xxl) {
+      width: 926px;
+    }
+    @media (min-width: $screen-xl) {
+      width: 80%;
+    }
+  }
+}

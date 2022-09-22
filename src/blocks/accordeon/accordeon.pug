@@ -22,233 +22,253 @@ mixin accordeon(text, mods)
     .accordeon__inner.container
       .accordeon__element 
         .accordeon__btn(style="background-image: url(img/collect-data.png);")
-          h3.accordeon__title.h3 Сбор данных по потреблению энергоресурсов
+          h3.accordeon__title Сбор данных по потреблению энергоресурсов
           button(type='button').accordeon__check.btn-reset
         .accordeon__content
-          +text-block()
+          .text-block
+            p.text-block__text.text Команда профессионалов высокой квалификации проводит обследование, консалтинг, выбор оптимальных параметров проектного решения, реализацию, внедрение, сопровождение и&nbsp;поддержку.
+            p.text-block__text.text-bold Сбор данных по потреблению энергоресурсов
+            p.text-block__text.text-bold Коммерческий учет
+            p.text-block__text.text-bold Диспетчеризация и технический учет
+            p.text-block__text.text-bold Управление жизненным циклов средств измерения и приборов учета
+            p.text-block__text.text Наши Заказчики – основные предприятия реального сектора экономики: энергетики, нефтегазодобычи, промышленного производства. Наши продукты помогают им контролировать критическую инфраструктуру, обеспечивают аналитику для принятия управленческих решений, оптимизируют сложные технологические процессы.
           section.best
-            .best__inner.container
-              h2.best__title.h2-inner Преимущества
-              .best__about 
-                ul.best__about-list 
-                  li.best__about-item 
-                    .best__about-body
-                      .best__about-pic 
-                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
-                      .best__about-content
-                        .best__about-title
-                          h3.best__about-h3.h5 Наглядная экономика проектов
-                        .best__about-subtitle
-                          p.best__about-text.text Автоматизация расчета экономической эффективности
-                  li.best__about-item 
-                    .best__about-body
-                      .best__about-pic 
-                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
-                      .best__about-content
-                        .best__about-title
-                          h3.best__about-h3.h5 Единое пространство
-                        .best__about-subtitle
-                          p.best__about-text.text Единое пространство для совместной работы подразделений
-                  li.best__about-item 
-                    .best__about-body
-                      .best__about-pic 
-                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
-                      .best__about-content
-                        .best__about-title
-                          h3.best__about-h3.h5 Эффективное управление данными
-                        .best__about-subtitle
-                          p.best__about-text.text Контроль полноты исходных данных
-                  li.best__about-item 
-                    .best__about-body
-                      .best__about-pic 
-                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
-                      .best__about-content
-                        .best__about-title
-                          h3.best__about-h3.h5 Повышение эффективности
-                        .best__about-subtitle
-                          p.best__about-text.text Сокращение трудозатрат на ведение реестра
-              .best__screen 
-                ul.best__screen-list 
-                  li.best__screen-item 
-                    img(src="img/screen1.jpg", alt="Статистика")
-                  li.best__screen-item 
-                    img(src="img/screen2.jpg", alt="Статистика")
-                  li.best__screen-item 
-                    img(src="img/screen3.jpg", alt="Статистика")
+            h2.best__title.h2-inner Преимущества
+            .best__about 
+              ul.best__about-list 
+                li.best__about-item 
+                  .best__about-body
+                    .best__about-pic 
+                      img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                    .best__about-content
+                      .best__about-title
+                        h3.best__about-h3.h5 Наглядная экономика проектов
+                      .best__about-subtitle
+                        p.best__about-text.text Автоматизация расчета экономической эффективности
+                li.best__about-item 
+                  .best__about-body
+                    .best__about-pic 
+                      img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                    .best__about-content
+                      .best__about-title
+                        h3.best__about-h3.h5 Единое пространство
+                      .best__about-subtitle
+                        p.best__about-text.text Единое пространство для совместной работы подразделений
+                li.best__about-item 
+                  .best__about-body
+                    .best__about-pic 
+                      img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                    .best__about-content
+                      .best__about-title
+                        h3.best__about-h3.h5 Эффективное управление данными
+                      .best__about-subtitle
+                        p.best__about-text.text Контроль полноты исходных данных
+                li.best__about-item 
+                  .best__about-body
+                    .best__about-pic 
+                      img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                    .best__about-content
+                      .best__about-title
+                        h3.best__about-h3.h5 Повышение эффективности
+                      .best__about-subtitle
+                        p.best__about-text.text Сокращение трудозатрат на ведение реестра
+            .best__screen 
+              ul.best__screen-list 
+                li.best__screen-item 
+                  img(src="img/screen1.png", alt="Статистика")
+                li.best__screen-item 
+                  img(src="img/screen2.png", alt="Статистика")
+                li.best__screen-item 
+                  img(src="img/screen3.png", alt="Статистика")
             +task()
             .collapse 
               button(type="button").collapse__btn.text-bold.btn-reset Свернуть
       .accordeon__element 
         .accordeon__btn(style="background-image: url(img/comm.jpg);")
-          h3.accordeon__title.h3 Коммерческий учёт
+          h3.accordeon__title Коммерческий учёт
           button(type='button').accordeon__check.btn-reset
         .accordeon__content
-          +text-block()
+          .text-block
+            p.text-block__text.text Команда профессионалов высокой квалификации проводит обследование, консалтинг, выбор оптимальных параметров проектного решения, реализацию, внедрение, сопровождение и&nbsp;поддержку.
+            p.text-block__text.text-bold Сбор данных по потреблению энергоресурсов
+            p.text-block__text.text-bold Коммерческий учет
+            p.text-block__text.text-bold Диспетчеризация и технический учет
+            p.text-block__text.text-bold Управление жизненным циклов средств измерения и приборов учета
+            p.text-block__text.text Наши Заказчики – основные предприятия реального сектора экономики: энергетики, нефтегазодобычи, промышленного производства. Наши продукты помогают им контролировать критическую инфраструктуру, обеспечивают аналитику для принятия управленческих решений, оптимизируют сложные технологические процессы.
           section.best
-            .best__inner.container
-              h2.best__title.h2-inner Преимущества
-              .best__about 
-                ul.best__about-list 
-                  li.best__about-item 
-                    .best__about-body
-                      .best__about-pic 
-                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
-                      .best__about-content
-                        .best__about-title
-                          h3.best__about-h3.h5 Наглядная экономика проектов
-                        .best__about-subtitle
-                          p.best__about-text.text Автоматизация расчета экономической эффективности
-                  li.best__about-item 
-                    .best__about-body
-                      .best__about-pic 
-                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
-                      .best__about-content
-                        .best__about-title
-                          h3.best__about-h3.h5 Единое пространство
-                        .best__about-subtitle
-                          p.best__about-text.text Единое пространство для совместной работы подразделений
-                  li.best__about-item 
-                    .best__about-body
-                      .best__about-pic 
-                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
-                      .best__about-content
-                        .best__about-title
-                          h3.best__about-h3.h5 Эффективное управление данными
-                        .best__about-subtitle
-                          p.best__about-text.text Контроль полноты исходных данных
-                  li.best__about-item 
-                    .best__about-body
-                      .best__about-pic 
-                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
-                      .best__about-content
-                        .best__about-title
-                          h3.best__about-h3.h5 Повышение эффективности
-                        .best__about-subtitle
-                          p.best__about-text.text Сокращение трудозатрат на ведение реестра
-              .best__screen 
-                ul.best__screen-list 
-                  li.best__screen-item 
-                    img(src="img/screen1.jpg", alt="Статистика")
-                  li.best__screen-item 
-                    img(src="img/screen2.jpg", alt="Статистика")
-                  li.best__screen-item 
-                    img(src="img/screen3.jpg", alt="Статистика")
+            h2.best__title.h2-inner Преимущества
+            .best__about 
+              ul.best__about-list 
+                li.best__about-item 
+                  .best__about-body
+                    .best__about-pic 
+                      img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                    .best__about-content
+                      .best__about-title
+                        h3.best__about-h3.h5 Наглядная экономика проектов
+                      .best__about-subtitle
+                        p.best__about-text.text Автоматизация расчета экономической эффективности
+                li.best__about-item 
+                  .best__about-body
+                    .best__about-pic 
+                      img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                    .best__about-content
+                      .best__about-title
+                        h3.best__about-h3.h5 Единое пространство
+                      .best__about-subtitle
+                        p.best__about-text.text Единое пространство для совместной работы подразделений
+                li.best__about-item 
+                  .best__about-body
+                    .best__about-pic 
+                      img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                    .best__about-content
+                      .best__about-title
+                        h3.best__about-h3.h5 Эффективное управление данными
+                      .best__about-subtitle
+                        p.best__about-text.text Контроль полноты исходных данных
+                li.best__about-item 
+                  .best__about-body
+                    .best__about-pic 
+                      img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                    .best__about-content
+                      .best__about-title
+                        h3.best__about-h3.h5 Повышение эффективности
+                      .best__about-subtitle
+                        p.best__about-text.text Сокращение трудозатрат на ведение реестра
+            .best__screen 
+              ul.best__screen-list 
+                li.best__screen-item 
+                  img(src="img/screen1.png", alt="Статистика")
+                li.best__screen-item 
+                  img(src="img/screen2.png", alt="Статистика")
+                li.best__screen-item 
+                  img(src="img/screen3.png", alt="Статистика")
             +task()
             .collapse 
               button(type="button").collapse__btn.text-bold.btn-reset Свернуть
       .accordeon__element 
         .accordeon__btn(style="background-image: url(img/disp.jpg);")
-          h3.accordeon__title.h3 Диспетчеризация и технический учёт
+          h3.accordeon__title Диспетчеризация и технический учёт
           button(type='button').accordeon__check.btn-reset
         .accordeon__content
-          +text-block()
+          .text-block
+            p.text-block__text.text Команда профессионалов высокой квалификации проводит обследование, консалтинг, выбор оптимальных параметров проектного решения, реализацию, внедрение, сопровождение и&nbsp;поддержку.
+            p.text-block__text.text-bold Сбор данных по потреблению энергоресурсов
+            p.text-block__text.text-bold Коммерческий учет
+            p.text-block__text.text-bold Диспетчеризация и технический учет
+            p.text-block__text.text-bold Управление жизненным циклов средств измерения и приборов учета
+            p.text-block__text.text Наши Заказчики – основные предприятия реального сектора экономики: энергетики, нефтегазодобычи, промышленного производства. Наши продукты помогают им контролировать критическую инфраструктуру, обеспечивают аналитику для принятия управленческих решений, оптимизируют сложные технологические процессы.
           section.best
-            .best__inner.container
-              h2.best__title.h2-inner Преимущества
-              .best__about 
-                ul.best__about-list 
-                  li.best__about-item 
-                    .best__about-body
-                      .best__about-pic 
-                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
-                      .best__about-content
-                        .best__about-title
-                          h3.best__about-h3.h5 Наглядная экономика проектов
-                        .best__about-subtitle
-                          p.best__about-text.text Автоматизация расчета экономической эффективности
-                  li.best__about-item 
-                    .best__about-body
-                      .best__about-pic 
-                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
-                      .best__about-content
-                        .best__about-title
-                          h3.best__about-h3.h5 Единое пространство
-                        .best__about-subtitle
-                          p.best__about-text.text Единое пространство для совместной работы подразделений
-                  li.best__about-item 
-                    .best__about-body
-                      .best__about-pic 
-                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
-                      .best__about-content
-                        .best__about-title
-                          h3.best__about-h3.h5 Эффективное управление данными
-                        .best__about-subtitle
-                          p.best__about-text.text Контроль полноты исходных данных
-                  li.best__about-item 
-                    .best__about-body
-                      .best__about-pic 
-                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
-                      .best__about-content
-                        .best__about-title
-                          h3.best__about-h3.h5 Повышение эффективности
-                        .best__about-subtitle
-                          p.best__about-text.text Сокращение трудозатрат на ведение реестра
-              .best__screen 
-                ul.best__screen-list 
-                  li.best__screen-item 
-                    img(src="img/screen1.jpg", alt="Статистика")
-                  li.best__screen-item 
-                    img(src="img/screen2.jpg", alt="Статистика")
-                  li.best__screen-item 
-                    img(src="img/screen3.jpg", alt="Статистика")
+            h2.best__title.h2-inner Преимущества
+            .best__about 
+              ul.best__about-list 
+                li.best__about-item 
+                  .best__about-body
+                    .best__about-pic 
+                      img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                    .best__about-content
+                      .best__about-title
+                        h3.best__about-h3.h5 Наглядная экономика проектов
+                      .best__about-subtitle
+                        p.best__about-text.text Автоматизация расчета экономической эффективности
+                li.best__about-item 
+                  .best__about-body
+                    .best__about-pic 
+                      img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                    .best__about-content
+                      .best__about-title
+                        h3.best__about-h3.h5 Единое пространство
+                      .best__about-subtitle
+                        p.best__about-text.text Единое пространство для совместной работы подразделений
+                li.best__about-item 
+                  .best__about-body
+                    .best__about-pic 
+                      img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                    .best__about-content
+                      .best__about-title
+                        h3.best__about-h3.h5 Эффективное управление данными
+                      .best__about-subtitle
+                        p.best__about-text.text Контроль полноты исходных данных
+                li.best__about-item 
+                  .best__about-body
+                    .best__about-pic 
+                      img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                    .best__about-content
+                      .best__about-title
+                        h3.best__about-h3.h5 Повышение эффективности
+                      .best__about-subtitle
+                        p.best__about-text.text Сокращение трудозатрат на ведение реестра
+            .best__screen 
+              ul.best__screen-list 
+                li.best__screen-item 
+                  img(src="img/screen1.png", alt="Статистика")
+                li.best__screen-item 
+                  img(src="img/screen2.png", alt="Статистика")
+                li.best__screen-item 
+                  img(src="img/screen3.png", alt="Статистика")
             +task()
             .collapse 
               button(type="button").collapse__btn.text-bold.btn-reset Свернуть
       .accordeon__element 
         .accordeon__btn(style="background-image: url(img/control.jpg);")
-          h3.accordeon__title.h3 Управление жизненным циклом средств измерения и приборов учёта
+          h3.accordeon__title Управление жизненным циклом средств измерения и приборов учёта
           button(type='button').accordeon__check.btn-reset
         .accordeon__content
-          +text-block()
+          .text-block
+            p.text-block__text.text Команда профессионалов высокой квалификации проводит обследование, консалтинг, выбор оптимальных параметров проектного решения, реализацию, внедрение, сопровождение и&nbsp;поддержку.
+            p.text-block__text.text-bold Сбор данных по потреблению энергоресурсов
+            p.text-block__text.text-bold Коммерческий учет
+            p.text-block__text.text-bold Диспетчеризация и технический учет
+            p.text-block__text.text-bold Управление жизненным циклов средств измерения и приборов учета
+            p.text-block__text.text Наши Заказчики – основные предприятия реального сектора экономики: энергетики, нефтегазодобычи, промышленного производства. Наши продукты помогают им контролировать критическую инфраструктуру, обеспечивают аналитику для принятия управленческих решений, оптимизируют сложные технологические процессы.
           section.best
-            .best__inner.container
-              h2.best__title.h2-inner Преимущества
-              .best__about 
-                ul.best__about-list 
-                  li.best__about-item 
-                    .best__about-body
-                      .best__about-pic 
-                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
-                      .best__about-content
-                        .best__about-title
-                          h3.best__about-h3.h5 Наглядная экономика проектов
-                        .best__about-subtitle
-                          p.best__about-text.text Автоматизация расчета экономической эффективности
-                  li.best__about-item 
-                    .best__about-body
-                      .best__about-pic 
-                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
-                      .best__about-content
-                        .best__about-title
-                          h3.best__about-h3.h5 Единое пространство
-                        .best__about-subtitle
-                          p.best__about-text.text Единое пространство для совместной работы подразделений
-                  li.best__about-item 
-                    .best__about-body
-                      .best__about-pic 
-                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
-                      .best__about-content
-                        .best__about-title
-                          h3.best__about-h3.h5 Эффективное управление данными
-                        .best__about-subtitle
-                          p.best__about-text.text Контроль полноты исходных данных
-                  li.best__about-item 
-                    .best__about-body
-                      .best__about-pic 
-                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
-                      .best__about-content
-                        .best__about-title
-                          h3.best__about-h3.h5 Повышение эффективности
-                        .best__about-subtitle
-                          p.best__about-text.text Сокращение трудозатрат на ведение реестра
-              .best__screen 
-                ul.best__screen-list 
-                  li.best__screen-item 
-                    img(src="img/screen1.jpg", alt="Статистика")
-                  li.best__screen-item 
-                    img(src="img/screen2.jpg", alt="Статистика")
-                  li.best__screen-item 
-                    img(src="img/screen3.jpg", alt="Статистика")
+            h2.best__title.h2-inner Преимущества
+            .best__about 
+              ul.best__about-list 
+                li.best__about-item 
+                  .best__about-body
+                    .best__about-pic 
+                      img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                    .best__about-content
+                      .best__about-title
+                        h3.best__about-h3.h5 Наглядная экономика проектов
+                      .best__about-subtitle
+                        p.best__about-text.text Автоматизация расчета экономической эффективности
+                li.best__about-item 
+                  .best__about-body
+                    .best__about-pic 
+                      img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                    .best__about-content
+                      .best__about-title
+                        h3.best__about-h3.h5 Единое пространство
+                      .best__about-subtitle
+                        p.best__about-text.text Единое пространство для совместной работы подразделений
+                li.best__about-item 
+                  .best__about-body
+                    .best__about-pic 
+                      img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                    .best__about-content
+                      .best__about-title
+                        h3.best__about-h3.h5 Эффективное управление данными
+                      .best__about-subtitle
+                        p.best__about-text.text Контроль полноты исходных данных
+                li.best__about-item 
+                  .best__about-body
+                    .best__about-pic 
+                      img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                    .best__about-content
+                      .best__about-title
+                        h3.best__about-h3.h5 Повышение эффективности
+                      .best__about-subtitle
+                        p.best__about-text.text Сокращение трудозатрат на ведение реестра
+            .best__screen 
+              ul.best__screen-list 
+                li.best__screen-item 
+                  img(src="img/screen1.png", alt="Статистика")
+                li.best__screen-item 
+                  img(src="img/screen2.png", alt="Статистика")
+                li.best__screen-item 
+                  img(src="img/screen3.png", alt="Статистика")
             +task()
             .collapse 
               button(type="button").collapse__btn.text-bold.btn-reset Свернуть

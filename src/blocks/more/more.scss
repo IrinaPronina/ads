@@ -13,3 +13,20 @@
   justify-content: center;
   }
 }
+
+.news {
+  .more{
+    margin-bottom: 48px;
+    @media (min-width: $screen-lg) {
+      margin-bottom: 80px;
+    }
+  }
+}
+.projects__more {
+  .more{
+    margin-bottom: 48px;
+    @media (min-width: $screen-lg) {
+      margin-bottom: 80px;
+    }
+  }
+}

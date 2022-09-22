@@ -58,10 +58,19 @@
   }
 
   &.solutions {
-    margin-bottom: 80px;
+    margin-bottom: 120px;
 
-    @media (max-width: ($screen-xl - 1)) {
+    @media (min-width: $screen-xxl) {
       margin-bottom: 80px;
+    }
+  }
+
+  .solutions__content{
+    @media (min-width: $screen-xl) {
+      padding-bottom: 0;
+    }
+    @media (min-width: $screen-lg) {
+      padding-bottom: 60px;
     }
   }
 

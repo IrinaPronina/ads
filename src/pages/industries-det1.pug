@@ -1,0 +1,337 @@
+extends ../pug/layout.pug
+
+block meta
+  title Цифровизация производства
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+
+
+block content
+  +inner-wrapper()
+    +inner-wrapper-top(style="background-image: url(img/bgrd_industries.jpg);")
+      +breadcrumbs()
+        +breadcrumbs-item('Главная', '/')
+        +breadcrumbs-item('Цифровизация производства')
+      +main-title('Цифровизация производства')
+        +main-descr('Разработка комплексных программных продуктов на заказ, реализация решений в области цифровизации производства и снижения импортозависимости.') 
+  section.plain-content
+    .plain-content__inner.container 
+      .plain-content__text 
+        p.text Интегрированное планирование и оптимизация разрабатывает и внедряет инженерные и IT-решения для повышения эффективности бурения и разработки месторождений. Мы объединили инновации в геомеханике, геонавигации и петрофизике с технологиями облачной цифровой платформы и промышленного Искусственного интеллекта.
+      .num-block--industries
+      +num-block()
+  section.accordeon.accordeon--industries
+    .accordeon__inner.container
+      .accordeon__element 
+        .accordeon__btn(style="background-image: url(img/fill-img.jpg);")
+          h3.accordeon__title Цифровые двойники (цифровые модели, обеспечивающие предоставление реальной картины работы производства)
+          button(type='button').accordeon__check.btn-reset
+        .accordeon__content
+          .text-block
+            p.text-block__text.text Команда профессионалов высокой квалификации проводит обследование, консалтинг, выбор оптимальных параметров проектного решения, реализацию, внедрение, сопровождение и&nbsp;поддержку.
+            p.text-block__text.text-bold Сбор данных по потреблению энергоресурсов
+            p.text-block__text.text-bold Коммерческий учет
+            p.text-block__text.text-bold Диспетчеризация и технический учет
+            p.text-block__text.text-bold Управление жизненным циклов средств измерения и приборов учета
+            p.text-block__text.text Наши Заказчики – основные предприятия реального сектора экономики: энергетики, нефтегазодобычи, промышленного производства. Наши продукты помогают им контролировать критическую инфраструктуру, обеспечивают аналитику для принятия управленческих решений, оптимизируют сложные технологические процессы.
+          section.best
+            h2.best__title.h2-inner Преимущества
+            .best__about 
+              ul.best__about-list 
+                li.best__about-item 
+                  .best__about-body
+                    .best__about-pic 
+                      img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                    .best__about-content
+                      .best__about-title
+                        h3.best__about-h3.h5 Наглядная экономика проектов
+                      .best__about-subtitle
+                        p.best__about-text.text Автоматизация расчета экономической эффективности
+                li.best__about-item 
+                  .best__about-body
+                    .best__about-pic 
+                      img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                    .best__about-content
+                      .best__about-title
+                        h3.best__about-h3.h5 Единое пространство
+                      .best__about-subtitle
+                        p.best__about-text.text Единое пространство для совместной работы подразделений
+                li.best__about-item 
+                  .best__about-body
+                    .best__about-pic 
+                      img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                    .best__about-content
+                      .best__about-title
+                        h3.best__about-h3.h5 Эффективное управление данными
+                      .best__about-subtitle
+                        p.best__about-text.text Контроль полноты исходных данных
+                li.best__about-item 
+                  .best__about-body
+                    .best__about-pic 
+                      img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                    .best__about-content
+                      .best__about-title
+                        h3.best__about-h3.h5 Повышение эффективности
+                      .best__about-subtitle
+                        p.best__about-text.text Сокращение трудозатрат на ведение реестра
+            .best__screen 
+              ul.best__screen-list 
+                li.best__screen-item 
+                  img(src="img/screen1.png", alt="Статистика")
+                li.best__screen-item 
+                  img(src="img/screen2.png", alt="Статистика")
+                li.best__screen-item 
+                  img(src="img/screen3.png", alt="Статистика")
+            +task()
+            .collapse 
+              button(type="button").collapse__btn.text-bold.btn-reset Свернуть
+      .accordeon__element 
+        .accordeon__btn(style="background-image: url(img/fill-img.jpg);")
+          h3.accordeon__title Достоверность данных (качественная и достоверная информация, оперативно поступающая на всех этапах производства)Коммерческий учёт
+          button(type='button').accordeon__check.btn-reset
+        .accordeon__content
+          .text-block
+            p.text-block__text.text Команда профессионалов высокой квалификации проводит обследование, консалтинг, выбор оптимальных параметров проектного решения, реализацию, внедрение, сопровождение и&nbsp;поддержку.
+            p.text-block__text.text-bold Сбор данных по потреблению энергоресурсов
+            p.text-block__text.text-bold Коммерческий учет
+            p.text-block__text.text-bold Диспетчеризация и технический учет
+            p.text-block__text.text-bold Управление жизненным циклов средств измерения и приборов учета
+            p.text-block__text.text Наши Заказчики – основные предприятия реального сектора экономики: энергетики, нефтегазодобычи, промышленного производства. Наши продукты помогают им контролировать критическую инфраструктуру, обеспечивают аналитику для принятия управленческих решений, оптимизируют сложные технологические процессы.
+          section.best
+            .best__inner.container
+              h2.best__title.h2-inner Преимущества
+              .best__about 
+                ul.best__about-list 
+                  li.best__about-item 
+                    .best__about-body
+                      .best__about-pic 
+                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                      .best__about-content
+                        .best__about-title
+                          h3.best__about-h3.h5 Наглядная экономика проектов
+                        .best__about-subtitle
+                          p.best__about-text.text Автоматизация расчета экономической эффективности
+                  li.best__about-item 
+                    .best__about-body
+                      .best__about-pic 
+                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                      .best__about-content
+                        .best__about-title
+                          h3.best__about-h3.h5 Единое пространство
+                        .best__about-subtitle
+                          p.best__about-text.text Единое пространство для совместной работы подразделений
+                  li.best__about-item 
+                    .best__about-body
+                      .best__about-pic 
+                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                      .best__about-content
+                        .best__about-title
+                          h3.best__about-h3.h5 Эффективное управление данными
+                        .best__about-subtitle
+                          p.best__about-text.text Контроль полноты исходных данных
+                  li.best__about-item 
+                    .best__about-body
+                      .best__about-pic 
+                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                      .best__about-content
+                        .best__about-title
+                          h3.best__about-h3.h5 Повышение эффективности
+                        .best__about-subtitle
+                          p.best__about-text.text Сокращение трудозатрат на ведение реестра
+              .best__screen 
+                ul.best__screen-list 
+                  li.best__screen-item 
+                    img(src="img/screen1.png", alt="Статистика")
+                  li.best__screen-item 
+                    img(src="img/screen2.png", alt="Статистика")
+                  li.best__screen-item 
+                    img(src="img/screen3.png", alt="Статистика")
+            +task()
+            .collapse 
+              button(type="button").collapse__btn.text-bold.btn-reset Свернуть
+      .accordeon__element 
+        .accordeon__btn(style="background-image: url(img/fill-img.jpg);")
+          h3.accordeon__title Проактивные приложения (приложения, сигнализирующие о наступлении события и инициирующие выполнения требуемого действия)
+          button(type='button').accordeon__check.btn-reset
+        .accordeon__content
+          .text-block
+            p.text-block__text.text Команда профессионалов высокой квалификации проводит обследование, консалтинг, выбор оптимальных параметров проектного решения, реализацию, внедрение, сопровождение и&nbsp;поддержку.
+            p.text-block__text.text-bold Сбор данных по потреблению энергоресурсов
+            p.text-block__text.text-bold Коммерческий учет
+            p.text-block__text.text-bold Диспетчеризация и технический учет
+            p.text-block__text.text-bold Управление жизненным циклов средств измерения и приборов учета
+            p.text-block__text.text Наши Заказчики – основные предприятия реального сектора экономики: энергетики, нефтегазодобычи, промышленного производства. Наши продукты помогают им контролировать критическую инфраструктуру, обеспечивают аналитику для принятия управленческих решений, оптимизируют сложные технологические процессы.
+          section.best
+            .best__inner.container
+              h2.best__title.h2-inner Преимущества
+              .best__about 
+                ul.best__about-list 
+                  li.best__about-item 
+                    .best__about-body
+                      .best__about-pic 
+                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                      .best__about-content
+                        .best__about-title
+                          h3.best__about-h3.h5 Наглядная экономика проектов
+                        .best__about-subtitle
+                          p.best__about-text.text Автоматизация расчета экономической эффективности
+                  li.best__about-item 
+                    .best__about-body
+                      .best__about-pic 
+                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                      .best__about-content
+                        .best__about-title
+                          h3.best__about-h3.h5 Единое пространство
+                        .best__about-subtitle
+                          p.best__about-text.text Единое пространство для совместной работы подразделений
+                  li.best__about-item 
+                    .best__about-body
+                      .best__about-pic 
+                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                      .best__about-content
+                        .best__about-title
+                          h3.best__about-h3.h5 Эффективное управление данными
+                        .best__about-subtitle
+                          p.best__about-text.text Контроль полноты исходных данных
+                  li.best__about-item 
+                    .best__about-body
+                      .best__about-pic 
+                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                      .best__about-content
+                        .best__about-title
+                          h3.best__about-h3.h5 Повышение эффективности
+                        .best__about-subtitle
+                          p.best__about-text.text Сокращение трудозатрат на ведение реестра
+              .best__screen 
+                ul.best__screen-list 
+                  li.best__screen-item 
+                    img(src="img/screen1.png", alt="Статистика")
+                  li.best__screen-item 
+                    img(src="img/screen2.png", alt="Статистика")
+                  li.best__screen-item 
+                    img(src="img/screen3.png", alt="Статистика")
+            +task()
+            .collapse 
+              button(type="button").collapse__btn.text-bold.btn-reset Свернуть
+      .accordeon__element 
+        .accordeon__btn(style="background-image: url(img/fill-img.jpg);")
+          h3.accordeon__title Распределенная командная работа и цифровой рабочий (обеспечения рабочего взаимодействия сотрудников вне зависимости от географического места работы, междисциплинарное взаимодействие)
+          button(type='button').accordeon__check.btn-reset
+        .accordeon__content
+          .text-block
+            p.text-block__text.text Команда профессионалов высокой квалификации проводит обследование, консалтинг, выбор оптимальных параметров проектного решения, реализацию, внедрение, сопровождение и&nbsp;поддержку.
+            p.text-block__text.text-bold Сбор данных по потреблению энергоресурсов
+            p.text-block__text.text-bold Коммерческий учет
+            p.text-block__text.text-bold Диспетчеризация и технический учет
+            p.text-block__text.text-bold Управление жизненным циклов средств измерения и приборов учета
+            p.text-block__text.text Наши Заказчики – основные предприятия реального сектора экономики: энергетики, нефтегазодобычи, промышленного производства. Наши продукты помогают им контролировать критическую инфраструктуру, обеспечивают аналитику для принятия управленческих решений, оптимизируют сложные технологические процессы.
+          section.best
+            .best__inner.container
+              h2.best__title.h2-inner Преимущества
+              .best__about 
+                ul.best__about-list 
+                  li.best__about-item 
+                    .best__about-body
+                      .best__about-pic 
+                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                      .best__about-content
+                        .best__about-title
+                          h3.best__about-h3.h5 Наглядная экономика проектов
+                        .best__about-subtitle
+                          p.best__about-text.text Автоматизация расчета экономической эффективности
+                  li.best__about-item 
+                    .best__about-body
+                      .best__about-pic 
+                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                      .best__about-content
+                        .best__about-title
+                          h3.best__about-h3.h5 Единое пространство
+                        .best__about-subtitle
+                          p.best__about-text.text Единое пространство для совместной работы подразделений
+                  li.best__about-item 
+                    .best__about-body
+                      .best__about-pic 
+                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                      .best__about-content
+                        .best__about-title
+                          h3.best__about-h3.h5 Эффективное управление данными
+                        .best__about-subtitle
+                          p.best__about-text.text Контроль полноты исходных данных
+                  li.best__about-item 
+                    .best__about-body
+                      .best__about-pic 
+                        img(src="img/logo-sq-white.svg" alt="Логотип").best__about-img
+                      .best__about-content
+                        .best__about-title
+                          h3.best__about-h3.h5 Повышение эффективности
+                        .best__about-subtitle
+                          p.best__about-text.text Сокращение трудозатрат на ведение реестра
+              .best__screen 
+                ul.best__screen-list 
+                  li.best__screen-item 
+                    img(src="img/screen1.png", alt="Статистика")
+                  li.best__screen-item 
+                    img(src="img/screen2.png", alt="Статистика")
+                  li.best__screen-item 
+                    img(src="img/screen3.png", alt="Статистика")
+            +task()
+            .collapse 
+              button(type="button").collapse__btn.text-bold.btn-reset Свернуть
+  +projects()
+  +partners()
+  section.num-solutions.section--angled.mb-section-angled
+    .num-solutions__inner.container
+      h2.num-solutions__title.h2 Отрасли
+      .branch__block 
+        .branch__top(style="background-image: url(img/branch1.jpg);") 
+          a(href="javascript:void(0);").branch__link
+            .branch__item-body
+              h3.branch__item-title Цифровизация производства
+              ul.branch__item-bottom 
+                li.branch__item-item
+                  span.branch__item-subtitle.h5 Цифровые двойники
+                li.branch__item-item
+                  span.branch__item-subtitle.h5 Достоверность данных
+                li.branch__item-item
+                  span.branch__item-subtitle.h5 Проактивные приложения
+                li.branch__item-item
+                  span.branch__item-subtitle.h5 Распределённая командная работа и цифровой рабочий
+        ul.branch__grid 
+          .branch__item(style="background-image: url(img/branch2.jpg);")  
+            a(href="javascript:void(0);").branch__link
+              .branch__body 
+                h3.branch__title-h3 Нефть и газ
+                ul.branch__bottom 
+                  li.branch__subtitle.h5 Цифровые двойники
+                  li.branch__subtitle.h5 Цифровое бурение
+                  li.branch__subtitle.h5 Интегрированное планирование и оптимизация
+                  li.branch__subtitle.h5 Переработка и сбыт
+                  li.branch__subtitle.h5 Корпоративные сервисы
+          .branch__item(style="background-image: url(img/branch3.jpg);")  
+            a(href="javascript:void(0);").branch__link
+              .branch__body 
+                h3.branch__title-h3 Энергетика
+                ul.branch__bottom 
+                  li.branch__subtitle.h5 Генерация
+                  li.branch__subtitle.h5 Ресурсоснабжающие организации и сбыт
+                  li.branch__subtitle.h5 Корпоративные сервисы
+          .branch__item(style="background-image: url(img/branch4.png);")  
+            a(href="javascript:void(0);").branch__link
+              .branch__body 
+                h3.branch__title-h3 Промышленное производство
+                ul.branch__bottom 
+                  li.branch__subtitle.h5 Цифровые двойники
+                  li.branch__subtitle.h5 Достоверность данных
+                  li.branch__subtitle.h5 Проактивные приложения
+                  li.branch__subtitle.h5 Распределённая командная работа и цифровой рабочий
+
+
+
+//- block footer
+//-   p footer 
+
+//- block append page-bottom
+//-   script(src='js/some.js')
