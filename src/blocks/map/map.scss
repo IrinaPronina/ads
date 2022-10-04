@@ -11,7 +11,11 @@
     padding: 80px 0;
   }
 
-  &__top{
+  @media (min-width: $screen-xl) {
+    padding: 46px 0 46px;
+  }
+
+  &__top {
     margin: 0;
     margin-bottom: 64px;
   }
@@ -30,6 +34,7 @@
 
   &__item {
     margin-bottom: 32px;
+
     @media (min-width: $screen-lg) {
       flex: 0 0 33.3333%;
       padding: 0 20px;
@@ -46,9 +51,10 @@
 
   &__label {
     color: $main-dark;
-    
+
     margin-bottom: 16px;
-    @media (min-width: $screen-lg){
+
+    @media (min-width: $screen-lg) {
       margin-bottom: 32px;
     }
 
@@ -63,7 +69,8 @@
       color: $black;
       text-decoration: none;
     }
-    p{
+
+    p {
       margin: 0;
     }
 

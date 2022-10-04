@@ -76,5 +76,10 @@
 
   &.decor:after {
     bottom: -100px;
+
+    @media (min-width: 2100px) {
+      bottom: -150px;
+      height: 150px;
+    }
   }
 }

@@ -155,9 +155,14 @@
     top: -31px;
     background-color: $main-light;
 
+    @media (min-width: 2100px) {
+      height: 170px;
+    }
+
     @media (min-width: $screen-xl) {
       top: 0;
     }
+
     @media (min-width: $screen-md) {
       top: -24px;
     }
@@ -171,11 +176,16 @@
   &:after {
     transform-origin: 100%;
     bottom: -32px;
-    background-color: $color-accent;
+    background-color: $white;
     z-index: -1;
 
+
+    @media (min-width: 2100px) {
+      bottom: -150px;
+      height: 150px;
+    }
     @media (min-width: $screen-sm) {
-      bottom: -80px;
+      bottom: -100px;
     }
   }
 }
@@ -209,9 +219,9 @@
     background: linear-gradient(270deg, #44D0FF -0.23%, #33FFAD 99.77%);
   }
 
-  &:focus {
-    outline: 2px solid #64D8FF;
-  }
+  // &:focus {
+  //   outline: 2px solid #64D8FF;
+  // }
 
   &:active {
     border: none;
@@ -232,7 +242,7 @@
 
 .h2 {
   margin: 0;
-  font: 28px/1.2 $ff-i-sb;
+  font: 26px/1.2 $ff-i-sb;
   font-weight: 600;
   letter-spacing: 0.02em;
 
@@ -240,8 +250,8 @@
     font-size: 72px;
   }
 
-  @media (min-width: $screen-lg) {
-    font-size: 60px;
+  @media (min-width: $screen-md) {
+    font-size: 42px;
   }
 }
 
@@ -294,11 +304,11 @@
   letter-spacing: 0.05em;
   margin: 0;
 
-  @media (min-width: $screen-xxl) {
+  @media (min-width: $screen-c) {
     font-size: 20px;
   }
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-md) {
     font-size: 17px;
   }
 }
@@ -314,7 +324,7 @@
     font-size: 18px;
   }
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-md) {
     font-size: 15px;
   }
 }
@@ -354,20 +364,16 @@
     font-size: 24px;
   }
 }
+
 .info {
   font: 12px/1.3 $ff-i-r;
   letter-spacing: 0.05em;
 
   @media (min-width: $screen-xxl) {
-    font-size:  14px;
+    font-size: 14px;
   }
 }
 
 .pt-16 {
   padding-top: 16px;
 }
-
-
-
-
-

@@ -46,12 +46,20 @@ window.addEventListener("load", () => {
       speed: 1500,
       pagination: {
         el: '.top-slider__pagination',
-      clickable: true,
+        clickable: true,
       },
       navigation: {
         nextEl: '.top-slider__next',
         prevEl: '.top-slider__prev',
       },
+      breakpoints: {
+        320: {
+          speed: 1000,
+        },
+        1710: {
+          speed: 1250,
+        },
+      }
     });
   }
 
@@ -79,7 +87,7 @@ window.addEventListener("load", () => {
           slidesPerView: 2,
           spaceBetween: 0
         },
-        992: {
+        768: {
           slidesPerView: 3,
           spaceBetween: 0
         },
@@ -168,86 +176,147 @@ window.addEventListener("load", () => {
 
   if (gradientAccordeon) {
 
-    function GradientAccordeon() {
-      const accordeonContents = document.querySelectorAll('.accordeon__content');
-      const accordeonBtns = document.querySelectorAll('.accordeon__btn');
+    // function GradientAccordeon() {
+    const accordeonContents = document.querySelectorAll('.accordeon__content');
+    const accordeonBtns = document.querySelectorAll('.accordeon__btn');
 
-      accordeonBtns.forEach((btn, index) => {
-        btn.addEventListener('click', () => {
-          accordeonBtns.forEach((btnItem, idx) => {
+    accordeonBtns.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        accordeonBtns.forEach((btnItem, idx) => {
 
-            if (btnItem === btn) {
-              const accordeonelement = btn.closest('.accordeon__element');
-              const collapseBtn = accordeonelement.querySelector('.collapse__btn');
-              accordeonelement.classList.toggle('open');
+          if (btnItem === btn) {
+            const accordeonelement = btn.closest('.accordeon__element');
+            const collapseBtn = accordeonelement.querySelector('.collapse__btn');
+            accordeonelement.classList.toggle('open');
 
-              collapseBtn.addEventListener('click', () => {
-                accordeonelement.classList.remove('open');
-              })
-            }
-          })
+            collapseBtn.addEventListener('click', () => {
+              accordeonelement.classList.remove('open');
+            })
+          }
         })
       })
-    }
-    GradientAccordeon();
+    })
+    // }
+    // GradientAccordeon();
     // window.addEventListener('resize', GradientAccordeon);
   }
 
   /*-- Search --*/
 
   const searchBtn = document.querySelector('.search-btn');
+  const body = document.querySelector('body');
 
   if (searchBtn) {
-    searchBtn.addEventListener('click', () => {
-      const searchBlock = document.querySelector('.search-block');
-      searchBlock.classList.toggle('active');
-      searchBtn.classList.toggle('active');
-      document.body.classList.toggle('lock');
+
+    const timeout = 400;
+
+    const fixBlocks = document.querySelectorAll('.fix-block');
+
+    searchBtn.addEventListener('click', function (e) {
+      searchBlockOpen();
     })
 
-    const searchInput = document.querySelector('.search-block input')
+    function searchBlockOpen() {
+      const searchBlock = document.querySelector('.search-block');
+      searchBlock.classList.add('active');
+      // searchBtn.classList.add('active');
+      searchBodyLock();
 
-    searchInput.addEventListener('focus', function () {
-      const searchIcon = document.querySelector('.search-block__btn');
-      const searchPaths = document.querySelectorAll('.search-block__btn path');
+      searchBlock.addEventListener('click', function (e) {
+        console.log(e.target)
+        if (!e.target.closest('.search-block')) {
 
-      searchPaths.forEach(searchPath => {
-        searchPath.style.stroke = '#00E68A';
+          searchBlockClose(e.target.closest('.search-block'));
+        }
+      })
+    }
+
+    function searchBlockClose(doUnlock = true) {
+      const searchBlock = document.querySelector('.search-block');
+      searchBlock.classList.remove('active');
+      searchBtn.classList.remove('active');
+      searchBodyUnlock();
+    }
+
+    const serchBlockItem = document.querySelectorAll('.search-block-close');
+
+    if (serchBlockItem.length > 0) {
+      for (let i = 0; i < serchBlockItem.length; i++) {
+        const el = serchBlockItem[i];
+        el.addEventListener('click', function (e) {
+          searchBlockClose(el.closest('.search-block'));
+          e.preventDefault();
+        })
+      }
+    }
+
+    function searchBodyLock() {
+      let paddingOffset = window.innerWidth - body.offsetWidth + "px";
+      body.style.paddingRight = paddingOffset;
+      fixBlocks.forEach((el) => {
+        el.style.paddingRight = paddingOffset;
+      })
+      body.classList.add('lock');
+    }
+
+    function searchBodyUnlock() {
+      body.style.paddingRight = 0;
+      fixBlocks.forEach((el) => {
+        el.style.paddingRight = 0;
+      })
+      body.classList.remove('lock');
+    }
+
+
+    // const searchInput = document.querySelector('.search-block input')
+
+    // searchInput.addEventListener('focus', function () {
+    //   const searchIcon = document.querySelector('.search-block__btn');
+    //   const searchPaths = document.querySelectorAll('.search-block__btn path');
+
+    //   searchPaths.forEach(searchPath => {
+    //     searchPath.style.stroke = '#00E68A';
+    //   })
+    // })
+  }
+
+  /*--Collapse--*/
+
+  const topElement = document.querySelector('.accordeon')
+
+  if (topElement) {
+    let topPosition = topElement.offsetTop;
+
+    const collapseBtns = document.querySelectorAll('.collapse__btn');
+    collapseBtns.forEach((collapseBtn) => {
+      collapseBtn.addEventListener('click', (e) => {
+        scrollTo(topElement);
       })
     })
+
+    function scrollTo(element) {
+      window.scroll({
+        behavior: 'smooth',
+        left: 0,
+        top: topPosition
+      });
+    }
   }
-  /*-- Thanks popup --*/
 
-  // const body = document.querySelector('body');
-  // const popupBtn = document.querySelector('.popup-submit');
 
-  // let unlock = true;
+  /*--Fancybox--*/
 
-  // const timeout = 400;
-
-  // popupBtn.addEventListener('click', function (e) {
-  //   const popupName = popupBtn.getAttribute('data-id').replace('#', '');
-  //   const currentPopup = document.getElementById(popupName);
-  //   popupOpen(currentPopup);
-  //   console.log(currentPopup);
-  // })
-
-  // function popupOpen(currentPopup) {
-  //   if (currentPopup && unlock) {
-  //     const popupActive = document.querySelector('.popup.open');
-  //     if (popupActive) {
-  //       popupClose(popupActive, false);
-  //     } else {
-  //       bodyLock();
+  // Fancybox.bind('[data-fancybox="trigger"]', {
+  //   closeButton: true,
+  //   // dragToClose: false,
+  //   // click: false,
+  
+  //   on : {
+  //     ready : (fancybox) => {
+  //       const previousPOpup = document.querySelector('[data-fancybox="trigger"]');
+  //       console.log(previousPOpup);
   //     }
-  //     currentPopup.classList.add('open');
-  //     body.style.overflow = 'hidden';
-  //     currentPopup.addEventListener('click', function (e) {
-  //       if (!e.target.closest('.popup')) {
-  //         popupClose(e.target.closest('.popup'));
-  //       }
-  //     })
   //   }
-  // }
+  // });
 
 });

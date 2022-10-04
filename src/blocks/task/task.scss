@@ -7,6 +7,7 @@
   $block-name: &;
 
   margin-bottom: 40px;
+
   @media (min-width: $screen-lg) {
     margin-bottom: 64px;
   }
@@ -24,11 +25,13 @@
     list-style: none;
     padding-left: 20px;
     margin-bottom: 40px;
+
     @media (min-width: $screen-lg) {
       padding-left: 26px;
-      margin-bottom: 80px;
+      margin-bottom: 64px;
     }
   }
+
 
   &__item {
     position: relative;
@@ -36,7 +39,7 @@
     font-size: 18px;
     color: $black;
 
-    p{
+    p {
       margin: 0;
     }
 
@@ -48,6 +51,7 @@
       width: 10px;
       height: 10px;
       background-color: $color-accent;
+
       @media (min-width: $screen-lg) {
         left: -26px;
       }
@@ -56,5 +60,45 @@
     @media (min-width: $screen-lg) {
       margin-bottom: 26px;
     }
+  }
+}
+
+.task--links .task__item::before {
+  background-color: #fff;
+}
+
+.task--links {
+  margin-top: 64px;
+
+
+  .hyperlink__link {
+    color: $black;
+    width: fit-content;
+    transition: color $transition-time;
+
+    &:hover {
+      color: $white;
+
+      .hyperlink__svg svg path {
+        stroke: #fff;
+      }
+    }
+  }
+
+  .hyperlink__svg {
+    padding-left: 8px;
+    display: inline-block;
+  }
+
+  .hyperlink__svg svg path {
+    transition: all $transition-time;
+  }
+}
+
+.task__list.task__list--inner {
+  margin-bottom: 24px;
+
+  @media (min-width: $screen-lg) {
+    margin-bottom: 24px;
   }
 }

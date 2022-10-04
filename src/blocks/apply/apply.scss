@@ -7,7 +7,8 @@
   $block-name: &; // #{$block-name}__element
 
   margin-bottom: 40px;
-  @media (min-width: $screen-lg){
+
+  @media (min-width: $screen-lg) {
     margin-bottom: 64px;
   }
 
@@ -29,15 +30,17 @@
 
   &__item {
     margin-bottom: 16px;
-    @media (max-width: ($screen-xxl - 1)){
-      flex: 0 0 50%;
-      margin-bottom: 20px;
-    }
+    padding: 0 20px;
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-c) {
       padding: 0 20px;
       flex: 0 0 25%;
       margin-bottom: 0;
+    }
+
+    @media (max-width: ($screen-c - 1)) {
+      flex: 0 0 50%;
+      margin-bottom: 20px;
     }
   }
 
@@ -63,7 +66,7 @@
       height: 60px;
     }
 
-    svg{
+    svg {
       width: 100%;
       height: 100%;
     }

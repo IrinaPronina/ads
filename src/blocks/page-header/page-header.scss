@@ -21,10 +21,12 @@
 
     @media (min-width: $screen-xl) {
       padding: 32px 0 24px;
+      align-items: flex-start;
     }
 
-    @media (min-width: $screen-lg) {
-      padding: 24px 0 12px;
+    @media (min-width: $screen-md) {
+      padding: 24px 0 24px;
+      align-items: center;
     }
 
     @media (min-width: $screen-sm) {
@@ -38,11 +40,29 @@
     order: 1;
 
     @media (min-width: $screen-xxl) {
-      margin-right: 78px;
+      margin-right: 64px;
+      width: 24%;
+    }
+
+    @media (min-width: $screen-c) {
+      width: 23%;
     }
 
     @media (min-width: $screen-xl) {
-      width: 22%;
+      width: 250px;
+      margin-right: 0;
+      max-height: 39px;
+    }
+
+    @media (min-width: $screen-lg) {
+      margin-right: 50px;
+      max-height: 33px;
+    }
+
+    @media (min-width: $screen-md) {
+      margin-right: 50px;
+      max-height: 33px;
+      width: 210px;
     }
 
     @media (min-width: $screen-sm) {
@@ -58,15 +78,25 @@
 
     @media (min-width: $screen-xxl) {
       justify-content: flex-start;
-    }
-
-    @media (min-width: $screen-xl) {
       width: 40%;
       order: 2;
     }
 
+    @media (min-width: $screen-c) {
+      width: 30%;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 34%;
+      order: 2;
+    }
+
     @media (min-width: $screen-lg) {
-      width: 12%;
+      width: 15%;
+    }
+
+    @media (min-width: $screen-md) {
+      width: 17%;
     }
 
   }
@@ -77,12 +107,21 @@
     display: flex;
     justify-content: center;
 
-    @media (min-width: $screen-xl) {
+    @media (min-width: $screen-xxl) {
       order: 3;
-      width: 30%;
+      width: 32%;
     }
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-c) {
+      width: 21%;
+    }
+
+    @media (min-width: $screen-xl) {
+      order: 3;
+      width: 26%;
+    }
+
+    @media (min-width: $screen-md) {
       justify-content: space-between;
     }
 
@@ -102,6 +141,7 @@
 
   &__phone {
     display: none;
+    text-decoration: none;
 
     color: $main-light;
     font: 14px $ff-i-b;
@@ -114,9 +154,14 @@
     }
 
     @media (min-width: $screen-lg) {
-      font-size: 17px;
+
       margin-bottom: 8px;
       display: block;
+    }
+
+    @media (min-width: $screen-md) {
+      display: block;
+      font-size: 17px;
     }
   }
 
@@ -125,7 +170,7 @@
     position: relative;
   }
 
-  &__search-btn path{
+  &__search-btn path {
     transition: all $transition-time;
   }
 
@@ -144,8 +189,8 @@
       }
     }
 
-    &:hover{
-      .page-header__search-btn path{
+    &:hover {
+      .page-header__search-btn path {
         stroke: $white;
       }
     }
@@ -179,20 +224,27 @@
       justify-content: flex-end;
 
       @media (min-width: $screen-xxl) {
-        padding-top: 80px;
-        padding-right: 86px;
+        padding-top: 66px;
+        padding-right: 96px;
       }
 
       @media (min-width: $screen-xl) {
         padding-top: 52px;
-        padding-right: 36px;
+        padding-right: 84px;
       }
 
       @media (min-width: $screen-lg) {
         padding-right: 214px;
       }
-      @media (min-width: $screen-md) {
-      }
+
+      @media (min-width: $screen-md) {}
+    }
+
+    &__close{
+      position: absolute;
+      right: 24px;
+      width: 20px;
+      height: 20px;
     }
 
     &__content {
@@ -297,9 +349,8 @@
       font-size: 15px;
     }
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-md) {
       display: block;
-      ;
     }
   }
 
@@ -322,6 +373,12 @@
 
     @media (min-width: $screen-xxl) {
       width: auto;
+      display: block;
+    }
+
+    @media (min-width: $screen-c) {
+      display: flex;
+      justify-content: center;
     }
 
     @media (min-width: $screen-xl) {
@@ -360,7 +417,7 @@
         height: 100%;
         z-index: 99;
         background: linear-gradient(0deg, #00BFFF 0%, #00E68A 100%);
-        padding: 24px 32px;
+        padding: 24px 16px;
         transition: right $transition-time;
       }
 
@@ -377,7 +434,7 @@
       left: -24%;
       width: 24%;
       height: 100%;
-      background: rgba(1,73,69,.48);
+      background: rgba(1, 73, 69, .48);
       transition: all $transition-time;
 
 
@@ -452,6 +509,9 @@
         pointer-events: none;
         transition: all $transition-time;
 
+        @media (min-width: $screen-xxl) {
+          top: 10px;
+        }
         @media (min-width: $screen-xl) {
           display: block;
           top: 8px;
@@ -522,7 +582,7 @@
       }
 
       & .menu__sublist {
-        padding-top: 24px;
+        padding-top: 16px;
         max-height: 500px;
         opacity: 1;
       }
@@ -593,7 +653,7 @@
 
   &__subitem {
     position: relative;
-    padding: 8px 24px;
+    padding: 8px 16px;
 
     cursor: pointer;
     transition: all $transition-time;
@@ -607,8 +667,8 @@
     @media (min-width: $screen-xl) {
       background-color: $white;
 
-      &:not(:last-child){
-              border-bottom: 1px solid #E3E3E3;
+      &:not(:last-child) {
+        border-bottom: 1px solid #E3E3E3;
       }
     }
 
@@ -635,10 +695,17 @@
 
   }
 
-  
+
   &__sublink {
     color: $main-dark;
     text-decoration: none;
+
+    @media (min-width: $screen-xxl) {
+      font-size: 18px !important;
+    }
+    @media (min-width: $screen-xl) {
+      font-size: 15px !important;
+    }
   }
 
   &__burger {
@@ -662,7 +729,7 @@
       width: 30px;
     }
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-md) {
       margin-right: 16px;
     }
 
@@ -705,8 +772,11 @@
     white-space: nowrap;
 
     @media (min-width: $screen-lg) {
-      font-size: 15px;
       font-weight: 700;
+    }
+
+    @media (min-width: $screen-md) {
+      font-size: 15px;
     }
   }
 

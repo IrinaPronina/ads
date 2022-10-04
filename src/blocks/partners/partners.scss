@@ -8,9 +8,13 @@
   $block-name: &; // #{$block-name}__element
   margin-bottom: 86px;
 
-  @media (min-width: $screen-lg) {
-    margin-bottom: 120px;
+  @media (min-width: $screen-xxl) {
+    margin-bottom: 152px;
   }
+  @media (min-width: $screen-c) {
+    margin-bottom: 80px;
+  }
+
 
   &__title {
     background: linear-gradient(270deg, #00BFFF -0.23%, #00E68A 99.77%);

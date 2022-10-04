@@ -56,6 +56,7 @@ padding-top: 48px;
   &__search {
     @media (min-width: $screen-lg) {
       width: 120px;
+      padding-left: 6px;
     }
   }
 

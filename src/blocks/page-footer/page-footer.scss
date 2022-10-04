@@ -14,15 +14,23 @@
     padding: 120px 0 56px;
   }
 
+  @media (min-width: $screen-c) {
+    padding: 86px 0 48px;
+  }
+
   @media (min-width: $screen-lg) {
     padding: 80px 0 48px;
+  }
+
+  @media (min-width: $screen-md) {
+    padding: 64px 0 56px;
   }
 
 
   &__body {
     position: relative;
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-md) {
       display: flex;
     }
   }
@@ -33,14 +41,24 @@
 
     @media (min-width: $screen-xxl) {
       margin-right: 42px;
+      flex: 0 0 30%;
     }
+
+    @media (min-width: $screen-c) {
+      flex: 0 0 35%;
+    }
+
     @media (min-width: $screen-xl) {
       margin-right: 52px;
     }
 
     @media (min-width: $screen-lg) {
+      margin-right: 208px;
+    }
+
+    @media (min-width: $screen-md) {
       margin-bottom: 0;
-      margin-right: 66px;
+      margin-right: 120px;
     }
   }
 
@@ -50,6 +68,11 @@
     @media (min-width: $screen-xxl) {
       flex: 0 0 18%;
     }
+
+    @media (min-width: $screen-c) {
+      flex: 0 0 21%;
+    }
+
     @media (min-width: $screen-xl) {
       display: block;
       flex: 0 0 17%;
@@ -64,14 +87,15 @@
 
       margin-bottom: 54px;
     }
+
     @media (min-width: $screen-xl) {
 
       margin-bottom: 46px;
     }
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-md) {
       width: 267px;
-      margin-bottom: 56px;
+      margin-bottom: 46px;
     }
   }
 
@@ -88,7 +112,7 @@
       margin-bottom: 16px;
     }
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-md) {
       padding-left: 80px;
     }
   }
@@ -99,7 +123,7 @@
     margin-bottom: 0;
     letter-spacing: 0.05em;
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-md) {
       padding-left: 80px;
     }
   }
@@ -121,9 +145,9 @@
       margin-bottom: 16px;
     }
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-md) {
       font-size: 16px;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
   }
 
@@ -146,12 +170,12 @@
       margin-bottom: 16px;
     }
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-md) {
       font-size: 16px;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
 
-    &:hover{
+    &:hover {
       color: $main-light;
     }
   }
@@ -175,6 +199,19 @@
 
     @media (min-width: $screen-xxl) {
       font-size: 14px;
+      max-width: 280px;
+    }
+
+    @media (min-width: $screen-c) {
+      max-width: 240px;
+    }
+
+    @media (min-width: $screen-xl) {
+      max-width: 210px;
+    }
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 16px;
     }
   }
 
@@ -186,7 +223,7 @@
 
   &__item {
     color: $white;
-    font: 18px/1.3 $ff-i-m;
+    font: 16px/1.3 $ff-i-m;
     font-weight: 500;
     letter-spacing: 0.05em;
     margin-bottom: 32px;
@@ -206,7 +243,7 @@
     color: $white;
     transition: color $transition-time;
 
-    &:hover{
+    &:hover {
       color: $main-light;
     }
   }
@@ -215,26 +252,60 @@
 .footer-form {
 
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-md) {
     display: flex;
     justify-content: space-between;
   }
 
   &__left {
     flex: 0 0 47%;
+
+    @media (min-width: $screen-xxl) {
+      flex: 0 0 47%;
+    }
+
+    @media (min-width: $screen-c) {
+      flex: 0 0 49%;
+    }
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  &__left-textarea{
+    flex: 1 0 auto;
   }
 
   &__right {
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-xxl) {
       margin-top: 50px;
       flex: 0 0 47%;
+    }
+
+    @media (min-width: $screen-c) {
+      flex: 0 0 49%;
+      margin-top: 40px;
+    }
+
+    @media (min-width: $screen-md) {
+      margin-top: 39px;
+      flex: 0 0 47%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
   }
 
   &__label {
     width: 100%;
 
+    p {
+      margin-bottom: 0;
+    }
   }
 
   &__input {
@@ -253,7 +324,7 @@
       font: 12px/1.3 $ff-i-r;
       letter-spacing: 0.05em;
 
-      @media (min-width: $screen-lg) {
+      @media (min-width: $screen-xxl) {
         font-size: 14px;
       }
     }
@@ -276,10 +347,31 @@
     border: 1px solid #336D69;
     transition: all $transition-time;
 
+    @media (min-width: $screen-xxl) {
+
+      min-height: 103px;
+    }
+
+    @media (min-width: $screen-xl) {
+
+      min-height: 96px;
+    }
+
+    @media (min-width: $screen-lg) {}
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 0;
+      height: 100%;
+    }
+
     &::placeholder {
       color: $placeholder-color;
-      font: 14px/1.3 $ff-i-r;
+      font: 12px/1.3 $ff-i-r;
       letter-spacing: 0.05em;
+
+      @media (min-width: $screen-xxl) {
+        font-size: 14px;
+      }
     }
 
     &:focus {
@@ -293,15 +385,25 @@
     margin: 0;
     margin-bottom: 18px;
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-xxl) {
       margin-bottom: 24px;
+      font-size: 20px;
+    }
+
+    @media (min-width: $screen-c) {
+      font-size: 17px;
+      margin-bottom: 16px;
+    }
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 16px;
     }
   }
 
   &__submit {
     width: 113px;
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-md) {
       width: 100%;
     }
   }
@@ -311,18 +413,27 @@
     margin-bottom: 16px;
 
     @media (min-width: $screen-xxl) {
-      padding-top: 24px;
+      padding-top: 16px;
       padding-bottom: 24px;
     }
+
     @media (min-width: $screen-xl) {
-      padding-top: 4px;
-      padding-bottom: 4px;
+      padding-top: 8px;
+      padding-bottom: 16px;
     }
 
     @media (min-width: $screen-lg) {
-      margin-bottom: 0;
-      padding: 24px 0;
+      padding: 8px 0 8px;
       padding-left: 40px;
+    }
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 0;
+      padding: 8px 0 24px;
+      padding-left: 40px;
+      flex: 1 0 auto;
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -354,7 +465,7 @@
       font-weight: 700;
       transition: color $transition-time;
 
-      &:hover{
+      &:hover {
         color: $main-light;
       }
     }
@@ -384,7 +495,7 @@
 .message-mob {
   display: block;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-md) {
     display: none;
   }
 }
@@ -392,8 +503,13 @@
 .message-desc {
   display: none;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-md) {
     display: block;
   }
+
+  .footer-form__textarea {}
 }
 
+.footer-form__label.message-desc {
+  height: 100%;
+}

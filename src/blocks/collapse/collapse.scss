@@ -4,36 +4,55 @@
 
 .collapse {
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
 
   width: 100%;
   display: flex;
   justify-content: center;
 
-  &__btn{
+  &__btn {
     color: $white;
     position: relative;
+    transition: all $transition-time;
 
-    &::before{
-      position: absolute;
-      content: '';
-      background: url(../img/arrow-down-white.svg);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      border: 0;
-      width: 20px;
-      height: 24px;
-      top: -100%;
-      left: 50%;
-      transform: translateX(-50%);
-      transition: all $transition-time;
-    }
+    // &::before {
+    //   position: absolute;
+    //   content: '';
+    //   background: url(../img/arrow-down-white.svg);
+    //   background-repeat: no-repeat;
+    //   background-position: center;
+    //   background-size: contain;
+    //   border: 0;
+    //   width: 23px;
+    //   height: 24px;
+    //   top: -100%;
+    //   left: 50%;
+    //   transform: translateX(-50%);
+    //   transition: all $transition-time;
+    // }
+
+    svg {
+      width: 24px;
+      display: block;
+      margin: 4px auto;
+      transition: transform .5s;
   }
 
-  &:hover{
-    .collapse__btn::before{
-      top: -110%;
+    &:hover {
+
+      svg{
+        transform: translateY(-10px);
+        // animation: scroll .5s ease-out alternate infinite;
+      }
     }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10px);
   }
 }

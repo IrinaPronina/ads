@@ -33,9 +33,13 @@
   }
 
   &__text {
-    @media (min-width: $screen-xxl) {
+    max-width: 1180px;
+    @media (min-width: $screen-c) {
       margin-bottom: 24px;
       transform: translateY(-28px);
+    }
+    @media (min-width: $screen-lg) {
+      margin-bottom: 16px;
     }
   }
 }

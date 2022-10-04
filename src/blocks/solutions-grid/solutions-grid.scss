@@ -4,41 +4,44 @@
 
 .solutions-grid {
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
 
 
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+  z-index: 7;
+  filter: drop-shadow(0px 8px 32px rgba(0, 0, 0, 0.24));
+  transform: translateY(20px);
+
+
+  @media (min-width: $screen-c) {
     margin: 0;
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 16px;
-    z-index: 7;
-    filter: drop-shadow(0px 8px 32px rgba(0, 0, 0, 0.24));
-    transform: translateY(20px);
+    gap: 40px;
+  }
 
-    @media (min-width: $screen-xxl) {
-      margin: 0;
-      gap: 40px;
-    }
+  @media (min-width: $screen-xl) {
+    margin: 0 20%;
+  }
 
-    @media (min-width: $screen-xl) {
-      margin: 0 14%;
-      row-gap: 32px;
-      column-gap: 40px;
-    }
+  @media (min-width: $screen-lg) {
+    margin: 0 13%;
+  }
 
-    @media (min-width: $screen-lg) {
-      margin: 0 6%;
-      row-gap: 32px;
-      column-gap: 40px;
-    }
+  @media (min-width: $screen-md) {
+    margin: 0 4%;
+    row-gap: 32px;
+    column-gap: 40px;
+  }
 
   &__item {
     grid-column: 12 span;
     background-color: $black;
     border-radius: 16px;
-
+    position: relative;
     background-repeat: no-repeat;
     background-color: $black;
     background-position: center center;
@@ -50,16 +53,22 @@
 
     @media (min-width: $screen-xxl) {
       grid-column: 3 span;
+      height: 320px;
+      aspect-ratio: 1/1;
+    }
+
+    @media (min-width: $screen-c) {
+      grid-column: 3 span;
+      height: 200px;
     }
 
     @media (min-width: $screen-xl) {
       grid-column: 6 span;
       width: 320px;
-      aspect-ratio: 1/1;
-      height: 320px;
+
     }
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-md) {
       grid-column: 6 span;
       width: 320px;
       height: 200px;
@@ -70,13 +79,35 @@
     }
 
 
+
     &:nth-child(1) {
       background-image: url("../img/a1.jpg");
+      position: relative;
+
+      // &::before {
+      //   content: '';
+      //   position: absolute;
+      //   width: 100%;
+      //   height: 100%;
+      //   background: rgba(0, 0, 0, 0.48);
+      //   opacity: 0;
+      //   top: 0;
+      //   left: 0;
+      //   z-index: 1;
+      //   pointer-events: none;
+      // }
 
       &:hover {
+
+        // &::before {
+        //   opacity: 1;
+        // }
+
         background-image: url("../img/a2.jpg");
+
       }
     }
+
     &:nth-child(2) {
       background-image: url("../img/b1.jpg");
 
@@ -84,6 +115,7 @@
         background-image: url("../img/b2.jpg");
       }
     }
+
     &:nth-child(3) {
       background-image: url("../img/c1.jpg");
 
@@ -91,6 +123,7 @@
         background-image: url("../img/c2.jpg");
       }
     }
+
     &:nth-child(4) {
       background-image: url("../img/d1.jpg");
 
@@ -98,6 +131,7 @@
         background-image: url("../img/d2.jpg");
       }
     }
+
     &:nth-child(5) {
       background-image: url("../img/e1.jpg");
 
@@ -105,6 +139,7 @@
         background-image: url("../img/e2.jpg");
       }
     }
+
     &:nth-child(6) {
       background-image: url("../img/f1.jpg");
 
@@ -112,6 +147,7 @@
         background-image: url("../img/f2.jpg");
       }
     }
+
     &:nth-child(7) {
       background-image: url("../img/g1.jpg");
 
@@ -119,6 +155,7 @@
         background-image: url("../img/g2.jpg");
       }
     }
+
     &:nth-child(8) {
       background-image: url("../img/h1.jpg");
 
@@ -136,17 +173,22 @@
     width: 100%;
     height: 100%;
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-c) {
       padding: 32px;
     }
 
     @media (min-width: $screen-md) {
-      padding: 16px;
+      padding: 24px;
     }
   }
 
   &__subtitle {
     margin: 0;
     color: $white;
+    z-index: 2;
+
+    @media (min-width: $screen-md) {
+      font-size: 20px;
+    }
   }
 }

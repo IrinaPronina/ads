@@ -42,14 +42,16 @@ mixin page-footer(mods)
         form.page-footer__form.footer-form 
           .footer-form__left
             .footer-form__title.h5 Обратная связь
-            label.footer-form__label
-              input(type="text" name="name" placeholder="Имя Фамилия").footer-form__input
-            label.footer-form__label
-              input(type="text" name="name" placeholder="Компания").footer-form__input
-            label.footer-form__label
-              input(type="text" name="name" placeholder="Должность").footer-form__input
-            label.footer-form__label.message-desc
-              textarea(name="name", cols="30", rows="6", placeholder="Ваше сообщение").footer-form__textarea
+            .footer-form__left-input
+              label.footer-form__label
+                input(type="text" name="name" placeholder="Имя Фамилия").footer-form__input
+              label.footer-form__label
+                input(type="text" name="name" placeholder="Компания").footer-form__input
+              label.footer-form__label
+                input(type="text" name="name" placeholder="Должность").footer-form__input
+            .footer-form__left-textarea
+              label.footer-form__label.message-desc
+                textarea(name="name", placeholder="Ваше сообщение").footer-form__textarea
           .footer-form__right
             label.footer-form__label
               input(type="text" name="name" placeholder="Телефон").footer-form__input

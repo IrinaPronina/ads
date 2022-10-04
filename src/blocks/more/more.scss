@@ -4,27 +4,34 @@
 
 .more {
 
-  $block-name:                &;
-  
+  $block-name: &;
 
-  &__wrapper{
 
-  display: flex;
-  justify-content: center;
+  &__wrapper {
+
+    display: flex;
+    justify-content: center;
   }
 }
 
 .news {
-  .more{
+  .more {
     margin-bottom: 48px;
+
     @media (min-width: $screen-lg) {
       margin-bottom: 80px;
     }
   }
 }
+
 .projects__more {
-  .more{
+  @media (min-width: $screen-xl) {
+    margin-top: 32px;
+  }
+
+  .more {
     margin-bottom: 48px;
+
     @media (min-width: $screen-lg) {
       margin-bottom: 80px;
     }
